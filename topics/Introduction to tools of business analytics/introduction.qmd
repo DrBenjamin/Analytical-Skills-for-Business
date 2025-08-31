@@ -1,0 +1,68 @@
+---
+title: "Introduction to tools of business analytics"
+subtitle: "Analytical Skills for Business (WS 2025/26)"
+author: 
+    name: "© Benjamin Gross"
+    email: benjamin.gross@ext.hs-fresenius.de
+    affiliation: 
+      - Hochschule Fresenius - University of Applied Science
+      - "Email: benjamin.gross@ext.hs-fresenius.de"
+      - "Website: https://www.seriousbenentertainment.org"
+date: today
+date-format: long
+abstract: |
+    This document holds the course material for the Analytical Skills for Business course in the Master of Business Administration program. It discusses version control systems such as Git and GitHub for efficient team collaboration, offers an overview of no-code and low-code tools for data analytics including Tableau, Power BI, QlikView, makeML, PyCaret, RapidMiner, and KNIME, and introduces key programming languages such as R, Python, and SQL alongside essential programming concepts like syntax, libraries, variables, functions, objects, conditions, and loops. In addition, it covers working with modern development environments, including Unix-like systems, containers, APIs, Jupyter, and RStudio, and sets expectations for project submissions and evaluation.
+format:
+  html: 
+    embed-resources: true
+    theme: cerulean
+    toc: true
+    toc-expand: 2
+    toc-depth: 2
+    number-sections: true
+  pdf:
+    keep-tex: false
+    # template-partials: 
+    #   - title.tex
+    include-in-header:
+      text: |
+        \usepackage[noblocks]{authblk}
+        \renewcommand*{\Authsep}{, }
+        \renewcommand*{\Authand}{, }
+        \renewcommand*{\Authands}{, }
+        \renewcommand\Affilfont{\small}
+    documentclass: scrartcl
+    classoption: [onecolumn, oneside, a4paper]
+    cite-method: natbib
+    linkcolor: blue
+    urlcolor: blue
+    link-citations: true
+    filecolor: magenta
+    citecolor: magenta
+    colorlinks: true
+    margin-left: "1in"
+    margin-right: "1in"
+    margin-top: "1in"
+    margin-bottom: "1in" 
+    papersize: a4
+    fig-cap-location: top
+    toc: true
+    toc-depth: 5
+    number-sections: true
+    lof: false
+    lot: false
+bibliography: "introduction.bib"
+csl: "https://www.zotero.org/styles/apa"
+---
+
+\clearpage
+
+# Introduction {#sec-intro}
+
+xy
+
+# Literature
+
+::: {#refs}
+:::
+
