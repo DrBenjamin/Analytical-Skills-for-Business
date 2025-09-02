@@ -51,7 +51,6 @@ format:
     lot: false
 bibliography: ["../../literature/introduction.bib", "../../literature/introduction_further_readings.bib"]
 csl: "../../literature/apa.csl"
-nocite: "@*"
 ---
 
 \clearpage
@@ -153,5 +152,18 @@ xy
 
 # Literature
 
-::: {#refs}
-:::
+## Main References
+
+These are the primary textbooks and references for the course:
+
+@etinkaya-Rundel2021 provide a comprehensive introduction to modern statistics with a modern approach to statistical thinking.
+
+@Bruce2020 offer practical insights into statistics specifically tailored for data scientists with real-world applications.
+
+@Stephenson2023 covers essential data science practices with hands-on examples and case studies.
+
+## Further Readings
+
+For additional learning and deeper exploration of topics:
+
+@ben2025 provides supplementary introductory material on statistics and related concepts.
