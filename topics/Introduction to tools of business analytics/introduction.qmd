@@ -50,7 +50,7 @@ format:
     lof: false
     lot: false
 bibliography: "introduction.bib"
-csl: "https://www.zotero.org/styles/apa"
+csl: "../../literature/apa.csl"
 nocite: "@*"
 ---
 
