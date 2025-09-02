@@ -49,7 +49,7 @@ format:
     number-sections: true
     lof: false
     lot: false
-bibliography: "introduction.bib"
+bibliography: ["../../literature/introduction.bib", "../../literature/introduction_further_readings.bib"]
 csl: "../../literature/apa.csl"
 nocite: "@*"
 ---
@@ -57,6 +57,97 @@ nocite: "@*"
 \clearpage
 
 # Introduction {#sec-intro}
+
+xy
+
+## Implementing version control systems like git and GitHub for efficient team collaboration.
+
+xy
+
+## Overview on no-code and low-code tools for data analytics: Tableau, Power BI, QlikView, makeML, PyCaret, Rapidminer, KNIME, …
+
+xy
+
+## Overview on Programming languages: R, Phyton, SQL
+
+xy
+
+## Elements of programming languages: Syntax, libraries, variables, functions, objects, conditions, loops
+
+xy
+
+## Development environments: Unix-like systems, containers, APIs, Jupyter, RStudio
+
+xy 
+
+# Descriptive statistics
+
+xy
+
+## Measures of centrality, dispersion, and concentration.
+
+xy
+
+## Descriptive analytics for univariate, bivariate, and multivariate data.
+
+xy
+
+## Techniques for constructing, interpreting, and evaluating scores, rankings, metrics, and composite indicators.
+
+xy
+
+## Visualizing and exploring categorical, numerical, and time series data.
+
+xy
+
+## Techniques for handling messy data.
+
+xy
+
+## Techniques for measuring the association of variables, including correlation and regression.
+
+xy
+
+## Implement applications in the programming language R for practical data analysis.
+
+xy
+
+# Inferential statistics
+xy
+
+## Basic concepts of statistical inference.
+
+xy
+
+## Quantification of probability through random variables.
+
+xy
+
+## Hypothesis testing.
+
+xy
+
+## Understanding confidence intervals, p-values, and the power of statistical tests.
+
+xy
+
+## Apply inferential statistics in the programming language R, translating theoretical knowledge into practical applications.
+
+xy
+
+# Predictive analytics
+
+xy
+
+## Overview of data mining techniques.
+
+xy
+
+## Applications of regression analysis.
+
+xy
+
+## Applications of forecasting in predicting future business outcomes.
 
 xy
 
