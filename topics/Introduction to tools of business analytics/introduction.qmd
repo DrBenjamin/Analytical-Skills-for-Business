@@ -22,8 +22,6 @@ format:
     number-sections: true
   pdf:
     keep-tex: false
-    # template-partials: 
-    #   - title.tex
     include-in-header:
       text: |
         \usepackage[noblocks]{authblk}
@@ -53,6 +51,7 @@ format:
     lot: false
 bibliography: "introduction.bib"
 csl: "https://www.zotero.org/styles/apa"
+nocite: "@*"
 ---
 
 \clearpage
@@ -65,4 +64,3 @@ xy
 
 ::: {#refs}
 :::
-

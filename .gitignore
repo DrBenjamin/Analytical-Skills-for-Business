@@ -51,3 +51,4 @@ rsconnect/
 # macOS Finder metadata (ensure ignored everywhere)
 .DS_Store
 **/.DS_Store
+.vscode/settings.json
