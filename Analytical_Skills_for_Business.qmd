@@ -153,7 +153,43 @@ xy
 
 ## Hypothesis testing
 
-xy
+Hypothesis testing is a fundamental statistical method used to make inferences about population parameters based on sample data [@Illowsky2018]. It provides a systematic framework for evaluating claims about populations using sample evidence, enabling data-driven decision making in business contexts.
+
+### Core Concepts
+
+A statistical hypothesis test involves formulating two competing hypotheses:
+
+- **Null hypothesis (H₀)**: The status quo or default position, typically representing no effect or no difference
+- **Alternative hypothesis (H₁ or Hₐ)**: The research hypothesis representing the effect or difference we seek to detect
+
+The process involves calculating a test statistic from sample data and comparing it to a critical value or determining a p-value to make decisions about rejecting or failing to reject the null hypothesis [@GeeksforGeeks2024].
+
+### Key Components
+
+**Test Statistics**: Standardized measures that quantify how far sample data deviates from what would be expected under the null hypothesis.
+
+**Significance Level (α)**: The probability threshold for rejecting the null hypothesis, commonly set at 0.05 (5%).
+
+**P-value**: The probability of observing test results at least as extreme as those obtained, assuming the null hypothesis is true.
+
+**Critical Region**: The range of values for which the null hypothesis is rejected.
+
+### Types of Errors
+
+- **Type I Error (α)**: Rejecting a true null hypothesis (false positive)
+- **Type II Error (β)**: Failing to reject a false null hypothesis (false negative)
+- **Statistical Power (1-β)**: The probability of correctly rejecting a false null hypothesis
+
+### Reference Materials
+
+For comprehensive coverage of hypothesis testing concepts, methodologies, and applications, consult:
+
+- **Theoretical Foundation**: [Introductory Statistics](./literature/Introductory%20Statistics.pdf) provides detailed explanations of hypothesis testing principles and procedures [@Illowsky2018]
+- **Visual Guide**: [Hypothesis Testing Overview](./topics/Inferential%20statistics/Hypothesis%20testing/Hypothesis%20Testing.png) offers a visual representation of key concepts
+- **Detailed Methodology**: [Hypothesis Testing Documentation](./topics/Inferential%20statistics/Hypothesis%20testing/Hypothesis%20Testing.pdf) contains comprehensive methodological information
+- **Online Resource**: Additional perspectives on hypothesis testing applications can be found in the [GeeksforGeeks guide](https://www.geeksforgeeks.org/software-testing/understanding-hypothesis-testing/) [@GeeksforGeeks2024]
+
+Understanding hypothesis testing is essential for making informed business decisions based on data analysis, forming the foundation for advanced statistical inference and predictive analytics in business contexts.
 
 ## Confidence intervals, p-values, and statistical tests
 
