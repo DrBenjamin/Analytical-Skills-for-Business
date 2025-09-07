@@ -49,6 +49,7 @@ format:
     lot: false
 link-citations: true
 csl: "./literature/apa.csl"
+bibliography: ["./literature/essential_readings.bib", "./literature/further_readings.bib"]
 suppress-bibliography: true
 execute:
   enabled: true
@@ -97,6 +98,12 @@ Version control systems provide systematic approaches to managing changes in doc
 - **Documentation**: Integrated wiki and README support for project documentation
 
 The combination of Git and GitHub creates a powerful ecosystem for collaborative analytics projects, ensuring code quality, facilitating peer review, and maintaining comprehensive project documentation [@GeeksforGeeksGit2024].
+
+### Comparison of Git and GitHub
+
+On this image you can see the integration of Git in GitHub:
+
+![git-github.png](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/git-github.png)
 
 ### Business Analytics Applications
 
