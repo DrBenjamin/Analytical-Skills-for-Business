@@ -57,10 +57,9 @@ execute:
 ---
 
 \clearpage
-
 # Introduction {#sec-intro}
 
-xy
+Computer science 
 
 ## Implementing version control systems
 
@@ -74,6 +73,8 @@ Version control systems provide systematic approaches to managing changes in doc
 - **Commit**: A snapshot of the project at a specific point in time, representing a set of changes
 - **Branch**: An independent line of development allowing parallel work on different features
 - **Merge**: The process of integrating changes from different branches back together
+
+![git](.topics/Introduction to tools of business analytics/git and Github/phd101212s.gif)
 
 ### Git: Distributed Version Control
 
@@ -163,6 +164,7 @@ Understanding version control systems is fundamental for modern business analyti
 * Jupyter
 * RStudio
 
+\newpage
 # Descriptive statistics
 
 xy
@@ -202,6 +204,7 @@ xy
 
 in the programming language R for practical data analysis.
 
+\newpage
 # Inferential statistics
 
 xy
@@ -262,6 +265,7 @@ xy
 
 in the programming language R, translating theoretical knowledge into practical applications.
 
+\newpage
 # Predictive analytics
 
 xy
