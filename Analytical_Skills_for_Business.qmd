@@ -74,7 +74,7 @@ Version control systems provide systematic approaches to managing changes in doc
 - **Branch**: An independent line of development allowing parallel work on different features
 - **Merge**: The process of integrating changes from different branches back together
 
-![git](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/phd101212s.gif)
+![git](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/phd101212s.png)
 
 ### Git: Distributed Version Control
 

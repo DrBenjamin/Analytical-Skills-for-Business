@@ -49,5 +49,5 @@ renv::snapshot(lockfile = "r-code/renv.lock")
 
 ```bash
 # Knitting the quarto document
-quarto render Analytical_Skills_for_Business.qmd
+RENV_PROJECT="" quarto render Analytical_Skills_for_Business.qmd
 ```
