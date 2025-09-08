@@ -41,9 +41,7 @@ RENV_PROJECT=./r-code
 ```r
 # Updating renv packages
 renv::update()
-
-# Updating renv lockfile
-renv::snapshot(lockfile = "r-code/renv.lock")
+```
 
 ## Knitting the Document
 
