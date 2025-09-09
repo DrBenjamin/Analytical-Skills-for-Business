@@ -52,5 +52,7 @@ rsconnect/
 .DS_Store
 **/.DS_Store
 .vscode/settings.json
+r-code/renv/settings.json
 Analytical_Skills_for_Business.html
 Analytical_Skills_for_Business.pdf
+/.luarc.json
