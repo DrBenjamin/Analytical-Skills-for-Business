@@ -157,6 +157,7 @@ For more coverage of version control concepts, implementation strategies, and be
 
 Understanding version control systems is fundamental for modern business analytics, enabling collaborative development, ensuring reproducibility, and maintaining professional standards in data science projects.
 
+<!-- unfinished content
 ## Overview on no-code and low-code tools for data analytics
 
 * Tableau
@@ -190,12 +191,32 @@ Understanding version control systems is fundamental for modern business analyti
 * APIs 
 * Jupyter
 * RStudio
+-->
 
 \newpage
 # Descriptive statistics
 
-xy
+Descriptive statistics summarizes and presents the main features of a dataset so you can understand what the data look like before modeling or inference. It organizes raw values into clear numerical summaries and visuals, without making probabilistic claims about a wider population. In analytics projects, this first pass helps you validate data quality, spot outliers, and communicate patterns to stakeholders.
 
+What we typically summarize:
+
+- Central tendency: mean, median, and mode capture a typical or “center” value
+- Variability: range, variance, standard deviation, and interquartile range describe spread
+- Distribution shape: skewness and kurtosis characterize symmetry, tails, and outliers
+- Frequencies and percentiles: counts, proportions, quantiles (e.g., quartiles, deciles)
+
+Common methods:
+
+- Numerical methods: compute summary metrics and assemble frequency tables
+- Graphical methods: histograms (continuous data), bar or pie charts (categorical data), box plots (median, quartiles, outliers), and scatter plots (bivariate relationships)
+
+Business analytics context:
+
+- For monthly revenue by region, the mean signals typical performance, the standard deviation shows volatility, a box plot quickly flags outliers, and a bar chart compares regions. These summaries guide prioritization (e.g., regions with high variability may require deeper investigation) and set baselines for forecasting and experimentation.
+
+For an accessible overview of types, methods, and examples, see ResearchMethod.net: Descriptive Statistics — Types, Methods and Examples (https://researchmethod.net/descriptive-statistics/).
+
+<!-- unfinished content
 ## Measures of centrality, dispersion, and concentration
 
 xy
@@ -243,6 +264,7 @@ xy
 ## Quantification of probability through random variables
 
 xy
+-->
 
 ## Hypothesis testing
 
@@ -284,6 +306,7 @@ For comprehensive coverage of hypothesis testing concepts, methodologies, and ap
 
 Understanding hypothesis testing is essential for making informed business decisions based on data analysis, forming the foundation for advanced statistical inference and predictive analytics in business contexts.
 
+<!-- unfinished content
 ## Confidence intervals, p-values, and statistical tests
 
 xy
@@ -308,6 +331,7 @@ xy
 ## Forecasting in predicting future business outcomes
 
 xy
+-->
 
 # Literature
 
