@@ -17,9 +17,10 @@ format:
     embed-resources: true
     theme: cerulean
     toc: true
-    toc-expand: 2
-    toc-depth: 2
+    toc-expand: 5
+    toc-depth: 5
     number-sections: true
+    number-depth: 5
   pdf:
     keep-tex: false
     include-in-header:
