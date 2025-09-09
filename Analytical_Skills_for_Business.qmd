@@ -8,8 +8,8 @@ author:
       - Hochschule Fresenius - University of Applied Science
       - "Email: benjamin.gross@ext.hs-fresenius.de"
       - "Website: https://drbenjamin.github.io"
-date: today
-date-format: long
+date: now
+date-format: "D MMMM YYYY HH:mm"
 abstract: |
     This document holds the course material for the Analytical Skills for Business course in the Master of Business Administration program. It discusses version control systems such as Git and GitHub for efficient team collaboration, offers an overview of no-code and low-code tools for data analytics including Tableau, Power BI, QlikView, makeML, PyCaret, RapidMiner, and KNIME, and introduces key programming languages such as R, Python, and SQL alongside essential programming concepts like syntax, libraries, variables, functions, objects, conditions, and loops. In addition, it covers working with modern development environments, including Unix-like systems, containers, APIs, Jupyter, and RStudio, and sets expectations for project submissions and evaluation.
 format:
@@ -59,7 +59,33 @@ execute:
 \clearpage
 # Introduction {#sec-intro}
 
-Computer science 
+Computer science is the study of computers and computation, spanning theoretical and algorithmic foundations, the design of hardware and software, and practical uses of computing to process information. It encompasses core areas such as
+
+* algorithms and data structures
+* computer architecture
+* programming languages and software engineering
+* databases and information systems
+* networking and communications
+* graphics and visualization
+* human-computer interaction
+* intelligent systems. 
+
+The field draws on mathematics and engineering—using concepts like 
+
+* binary representation
+* Boolean logic
+* complexity analysis
+
+to reason about what can be computed and how efficiently.
+
+Emerging in the 1960s as a distinct discipline, computer science now sits alongside computer engineering, information systems, information technology, and software engineering within the broader computing family. Its reach is inherently interdisciplinary, intersecting with domains from the natural sciences to business and the social sciences. Beyond technical advances, the discipline engages with societal and professional issues, including 
+
+* reliability
+* security
+* privacy
+* intellectual property 
+
+in a networked world [@Britannica2025].
 
 ## Implementing version control systems
 
@@ -74,11 +100,11 @@ Version control systems provide systematic approaches to managing changes in doc
 - **Branch**: An independent line of development allowing parallel work on different features
 - **Merge**: The process of integrating changes from different branches back together
 
-![git](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/phd101212s.png)
+![**Source:** *https://uidaholib.github.io/get-git/1why.html*](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/phd101212s.png)
 
 ### Git: Distributed Version Control
 
-**Git** is a distributed version control system that tracks changes in files and coordinates work among multiple contributors. Key characteristics include:
+[**Git**](https://git-scm.com/) is a distributed version control system that tracks changes in files and coordinates work among multiple contributors. It was created by **Linus Torvalds** (creator of Linux) in 2005 and has since become the de facto standard for version control in software development. Key characteristics include:
 
 **Local Repository**: Each user maintains a complete copy of the project history, enabling offline work and faster operations.
 
@@ -90,7 +116,7 @@ Version control systems provide systematic approaches to managing changes in doc
 
 ### GitHub: Cloud-Based Collaboration Platform
 
-**GitHub** is a web-based hosting service for Git repositories that adds collaboration features and project management tools:
+[**GitHub**](https://github.com/) is a web-based hosting service for Git repositories that adds collaboration features and project management tools:
 
 - **Remote Repositories**: Centralized storage accessible from anywhere with internet connectivity
 - **Pull Requests**: Structured code review process for integrating changes
@@ -104,7 +130,7 @@ The combination of Git and GitHub creates a powerful ecosystem for collaborative
 
 On this image you can see the integration of Git in GitHub:
 
-![git-github.png](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/git-github.png)
+![**Source:** *https://marce10.github.io/ciencia_reproducible/intro_a_git_y_github.html*](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/git-github.png)
 
 ### Business Analytics Applications
 
@@ -116,14 +142,13 @@ In business analytics contexts, version control systems provide:
 - **Data Governance**: Audit trails for compliance and regulatory requirements
 - **Backup and Recovery**: Protection against data loss and accidental modifications
 
-### Reference Materials
+### A lot of documentation available
 
-For comprehensive coverage of version control concepts, implementation strategies, and best practices, consult:
+For more coverage of version control concepts, implementation strategies, and best practices, see:
 
 - **Theoretical Foundation**: [Introduction to Modern Statistics](./literature/Introduction_to_Modern_Statistics_2e.pdf) provides context on reproducible research practices and collaborative analytics [@cetinkaya-Rundel2021]
 - **Git Resources**: [Git Cheat Sheet](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/git-cheat-sheet-education.pdf) offers quick reference for common Git commands
 - **GitHub Documentation**: [GitHub Manual](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/github-manual.pdf) contains detailed guidance on platform features
-- **Visual Overview**: [Git and GitHub Workflow](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/git-github.png) illustrates the relationship between local and remote repositories
 - **Online Resources**: 
   - [GeeksforGeeks Git vs GitHub Guide](https://www.geeksforgeeks.org/git/difference-between-git-and-github/) provides practical comparisons and use cases [@GeeksforGeeksGit2024]
   - [Official GitHub Documentation](https://docs.github.com/en/get-started/start-your-journey/about-github-and-git) offers authoritative guidance on getting started [@GitHubDocs2024]

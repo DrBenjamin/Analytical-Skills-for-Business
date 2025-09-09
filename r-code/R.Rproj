@@ -13,7 +13,7 @@ RnwWeave: Sweave
 LaTeX: pdfLaTeX
 
 PythonType: conda
-PythonVersion: 3.11.13
-PythonPath: ~/conda/envs/r-reticulate/bin/python3.11
+PythonVersion: 3.13.7
+PythonPath: ~/conda/envs/r-reticulate/bin/python3.13
 
 ProjectName: Analytical Skills for Business
