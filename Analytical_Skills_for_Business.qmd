@@ -214,7 +214,7 @@ Business analytics context:
 
 - For monthly revenue by region, the mean signals typical performance, the standard deviation shows volatility, a box plot quickly flags outliers, and a bar chart compares regions. These summaries guide prioritization (e.g., regions with high variability may require deeper investigation) and set baselines for forecasting and experimentation.
 
-For an accessible overview of types, methods, and examples, see ResearchMethod.net: Descriptive Statistics — Types, Methods and Examples (https://researchmethod.net/descriptive-statistics/).
+For an accessible overview of types, methods, and examples, see [ResearchMethod.net](https://researchmethod.net/descriptive-statistics/).
 
 <!-- unfinished content
 ## Measures of centrality, dispersion, and concentration
