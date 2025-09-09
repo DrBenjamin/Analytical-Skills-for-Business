@@ -8,10 +8,8 @@ author:
       - Hochschule Fresenius - University of Applied Science
       - "Email: benjamin.gross@ext.hs-fresenius.de"
       - "Website: https://drbenjamin.github.io"
-date: now
 filters:
-  - filters/adjustTime.lua
-date-format: "D MMMM YYYY HH:mm"
+  - scripts/adjustTime.lua
 abstract: |
     This document holds the course material for the Analytical Skills for Business course in the Master of Business Administration program. It discusses version control systems such as Git and GitHub for efficient team collaboration, offers an overview of no-code and low-code tools for data analytics including Tableau, Power BI, QlikView, makeML, PyCaret, RapidMiner, and KNIME, and introduces key programming languages such as R, Python, and SQL alongside essential programming concepts like syntax, libraries, variables, functions, objects, conditions, and loops. In addition, it covers working with modern development environments, including Unix-like systems, containers, APIs, Jupyter, and RStudio, and sets expectations for project submissions and evaluation.
 format:
