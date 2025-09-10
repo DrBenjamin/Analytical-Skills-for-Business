@@ -111,7 +111,9 @@ Version control systems provide systematic approaches to managing changes in doc
 
 **Staging Area**: An intermediate area where changes are prepared before being committed to the repository.
 
-**Branching and Merging**: Lightweight branching allows for experimental development without affecting the main codebase.
+**Branching and Merging**: Lightweight branching allows for experimental development without affecting the main codebase. Merging integrates changes from different branches. In Open Source projects often Pull Requests are used to propose and discuss changes before merging. In the coporate world often Merge Requests are used. There is a difference between merging and rebasing. Merging creates a new commit that combines the histories of two branches, while rebasing rewrites the commit history to create a linear sequence of changes as you see on the figure below.
+
+![**Source:** *https://i0.wp.com/digitalvarys.com/wp-content/uploads/2020/03/Git-Merge-and-Rebase.png?resize=1536%2C843&ssl=1*](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/Git-Merge-and-Rebase.png)
 
 **Distributed Workflow**: No single point of failure, as every user has a complete backup of the project.
 
