@@ -19,7 +19,7 @@ format:
     toc: true
     toc-expand: 5
     toc-depth: 5
-    number-sections: true
+    number-sections: false
     number-depth: 5
   pdf:
     keep-tex: false
