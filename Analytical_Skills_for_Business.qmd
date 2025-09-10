@@ -131,6 +131,8 @@ The combination of Git and GitHub creates a powerful ecosystem for collaborative
 
 See also [Collaborating with Git and GitHub](https://hubchev.github.io/ds/91_git-github.html) by Prof. Dr. Huber about using git and Github for collaboration.
 
+*For students Github offers a [free educational](https://github.com/education) plan with additional features!*
+
 ### Comparison of Git and GitHub
 
 On this image you can see the integration of Git in GitHub:
