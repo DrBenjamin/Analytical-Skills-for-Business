@@ -1,8 +1,8 @@
 Version: 1.0
 
-RestoreWorkspace: No
-SaveWorkspace: No
-AlwaysSaveHistory: Yes
+RestoreWorkspace: Default
+SaveWorkspace: Default
+AlwaysSaveHistory: Default
 
 EnableCodeIndexing: Yes
 UseSpacesForTab: Yes
@@ -15,5 +15,3 @@ LaTeX: pdfLaTeX
 PythonType: conda
 PythonVersion: 3.13.7
 PythonPath: ~/conda/envs/r-reticulate/bin/python3.13
-
-ProjectName: Analytical Skills for Business
