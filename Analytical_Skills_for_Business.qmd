@@ -162,10 +162,37 @@ For more coverage of version control concepts, implementation strategies, and be
 
 Understanding version control systems is fundamental for modern business analytics, enabling collaborative development, ensuring reproducibility, and maintaining professional standards in data science projects.
 
+## Overview on Programming languages
+
+- **R:** R is a programming language and free software environment used for statistical computing and graphics supported by the R Foundation for Statistical Computing. It is widely used among statisticians and data miners for developing statistical software and data analysis.
+- **Python:** Python is a versatile programming language widely used in data science and analytics. It has a rich ecosystem of libraries such as Pandas, NumPy, and Matplotlib that facilitate data manipulation, analysis, and visualization. It can also be used to develop software as it is a general-purpose programming language which utilizes an object-oriented programming paradigm.
+- **SQL:** SQL (Structured Query Language) is the standard language for managing and querying relational databases. It is essential for data extraction, transformation, and loading (ETL) or extraction, loading and transformation (ELT) processes in analytics workflows. Modern databases like PostgreSQL, MySQL, and SQLite use SQL for data manipulation and retrieval and just have slightly different dialects.
+
+## Elements of programming languages
+
+- **Syntax:** the set of rules that defines the combinations of symbols that are considered to be correctly structured programs in that language.
+- **Libraries:** collections of pre-written code that users can call upon to save time and effort.
+- **Variables:** named storage locations in a program that hold values.
+- **Functions:** reusable blocks of code that perform a specific task.
+- **Objects:** instances of classes that encapsulate data and behavior.
+- **Conditions:** statements that control the flow of execution based on certain criteria.
+- **Loops:** constructs that repeat a block of code multiple times.
+
+## Development environments
+
+- **Unix-like systems:**Most popular Unix like system is [Linux](https://www.kernel.org/category/about.html). It is understood as a family of open source Unix-like operating systems based on the Linux kernel and mostly used in form of distributions such as [Ubuntu](https://ubuntu.com), [Debian](https://www.debian.org), [Fedora](https://getfedora.org), [CentOS](https://www.centos.org) and [Alpine Linux](https://alpinelinux.org/). The latter is known for its simplicity and efficiency and is often used as the base image for Docker containers (container host os).
+- **Containers:** [Docker](https://www.docker.com) is a production ready containerization service. On [hub.docker.com](hub.docker.com) you can store images that could be pulled. It acts as the main public registry for Docker images. Container are a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another. A Docker container image is a lightweight, standalone, executable package of software that includes everything needed to run an application: code, runtime, system tools, system libraries and settings.
+- **APIs:** (Application Programming Interface): An API is a set of definitions and protocols for building and integrating application software. It allows different software systems to communicate with each other. APIs are used to enable the integration of different systems, allowing them to share data and functionality. Examples include RESTful APIs, SOAP APIs, and GraphQL APIs.
+- **Jupyter:** [Jupyter](https://jupyter.org) is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It supports various programming languages, including Python, R, and Julia. Jupyter is widely used for data analysis, machine learning, and scientific computing.
+- **IDEs:** (Integrated Development Environments): IDEs are software applications that provide comprehensive facilities to computer programmers for software development. They typically include a code editor, a debugger, and build automation tools. Examples of popular IDEs include:
+  - **RStudio:** [RStudio](https://www.rstudio.com) is an integrated development environment (IDE) for R, a programming language for statistical computing and graphics. RStudio provides a user-friendly interface for writing and debugging R code, as well as tools for data visualization and reporting.
+  - **Visual Studio Code (VS Code):** [VS Code](https://code.visualstudio.com) is a free source-code editor made by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring. It is highly customizable, allowing users to change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.
+
 <!-- unfinished content
 ## Overview on no-code and low-code tools for data analytics
 
-* Tableau
+* [Tableau](https://www.tableau.com/academic/students)
+* [Snowflake](https://signup.snowflake.com/?utm_cta=trial-en-www-homepage-top-right-nav-ss-evg&_ga=2.74406678.547897382.1657561304-1006975775.1656432605&_gac=1.254279162.1656541671.Cj0KCQjw8O-VBhCpARIsACMvVLPE7vSFoPt6gqlowxPDlHT6waZ2_Kd3-4926XLVs0QvlzvTvIKg7pgaAqd2EALw_wcB)
 * Power BI
 * QlikView
 * makeML
@@ -173,29 +200,6 @@ Understanding version control systems is fundamental for modern business analyti
 * Rapidminer
 * KNIME
 
-## Overview on Programming languages
-
-* R
-* Phyton
-* SQL
-
-## Elements of programming languages
-
-* Syntax
-* libraries
-* variables
-* functions
-* objects
-* conditions
-* loops
-
-## Development environments
-
-* Unix-like systems
-* containers
-* APIs 
-* Jupyter
-* RStudio
 -->
 
 \newpage
