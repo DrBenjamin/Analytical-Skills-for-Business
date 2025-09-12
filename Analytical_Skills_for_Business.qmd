@@ -90,7 +90,7 @@ in a networked world [@Britannica2025].
 
 ## Implementing version control systems
 
-Version control systems are essential tools for managing code, tracking changes, and facilitating collaborative development in modern projects [@cetinkaya-Rundel2021]. These systems enable teams to work efficiently on shared codebases while maintaining a complete history of all modifications, ensuring reproducibility and accountability in data analysis workflows.
+Version control systems are essential tools for managing code, tracking changes, and facilitating collaborative development in modern development projects [@cetinkaya-Rundel2021]. These systems enable teams to work efficiently on shared codebases while maintaining a complete history of all modifications, ensuring reproducibility and accountability in data analysis workflows.
 
 ### Core Concepts
 
