@@ -131,7 +131,9 @@ The combination of Git and GitHub creates a powerful ecosystem for collaborative
 
 See also [Collaborating with Git and GitHub](https://hubchev.github.io/ds/91_git-github.html) by Prof. Dr. Huber about using git and Github for collaboration.
 
-*For students Github offers a [free educational](https://github.com/education) plan with additional features!*
+*For students Github offers a [free educational](https://github.com/education) plan with additional features!* Included you will find access to Github Copilot, a AI based code completion tools like. These are powerful gadgets to support your coding activities, but not a replacement for learning programming and coding by yourself as you can see on this image:
+
+![**Source:** *LinkedIn*](./topics/Introduction%20to%20tools%20of%20business%20analytics/git%20and%20Github/IMG_0121.png)
 
 ### Comparison of Git and GitHub
 
