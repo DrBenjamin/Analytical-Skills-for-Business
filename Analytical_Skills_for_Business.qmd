@@ -190,19 +190,23 @@ Understanding version control systems is fundamental for modern business analyti
   - **RStudio:** [RStudio](https://www.rstudio.com) is an integrated development environment (IDE) for R, a programming language for statistical computing and graphics. RStudio provides a user-friendly interface for writing and debugging R code, as well as tools for data visualization and reporting.
   - **Visual Studio Code (VS Code):** [VS Code](https://code.visualstudio.com) is a free source-code editor made by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring. It is highly customizable, allowing users to change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.
 
-<!-- unfinished content
 ## Overview on no-code and low-code tools for data analytics
 
-* [Tableau](https://www.tableau.com/academic/students)
-* [Snowflake](https://signup.snowflake.com/?utm_cta=trial-en-www-homepage-top-right-nav-ss-evg&_ga=2.74406678.547897382.1657561304-1006975775.1656432605&_gac=1.254279162.1656541671.Cj0KCQjw8O-VBhCpARIsACMvVLPE7vSFoPt6gqlowxPDlHT6waZ2_Kd3-4926XLVs0QvlzvTvIKg7pgaAqd2EALw_wcB)
-* Power BI
-* QlikView
-* makeML
-* PyCaret
-* Rapidminer
-* KNIME
-
--->
+- [n8n](https://app.n8n.cloud/dashboard)
+  - Follow this short introduction to n8n:
+    1. Create an account on [n8n.cloud](https://app.n8n.cloud/dashboard)
+    2. Create a new workflow
+    3. Add a new node and select "HTTP Request"
+    4. Configure the node to make a GET request to "https://minio.seriousbenentertainment.org:9000/data/Business_Report%20-%202025.csv"
+    5. Add a new node and select "Convert to File"
+    6. See what other possibilities n8n offers you to wrangle the data
+    Import the n8n workflow with this file [](https://minio.seriousbenentertainment.org:9000/data/Data%20downloading.json)
+- [Tableau](https://www.tableau.com/academic/students)
+- [Snowflake](https://signup.snowflake.com/?)
+- [Power BI](https://app.powerbi.com)
+- [QlikView](https://www.qlik.com/us/products/qlik-cloud-analytics)
+- [Rapidminer](https://altair.com/altair-rapidminer)
+- [KNIME](https://www.knime.com)
 
 \newpage
 # Descriptive statistics
