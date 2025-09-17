@@ -197,10 +197,10 @@ Understanding version control systems is fundamental for modern business analyti
     1. Create an account on [n8n.cloud](https://app.n8n.cloud/dashboard)
     2. Create a new workflow
     3. Add a new node and select "HTTP Request"
-    4. Configure the node to make a GET request to "https://minio.seriousbenentertainment.org:9000/data/Business_Report%20-%202025.csv"
+    4. Configure the node to make a GET request to `https://minio.seriousbenentertainment.org:9000/data/Business_Report%20-%202025.csv`
     5. Add a new node and select "Convert to File"
     6. See what other possibilities n8n offers you to wrangle the data
-    Import the n8n workflow with this file [](https://minio.seriousbenentertainment.org:9000/data/Data%20downloading.json)
+    You can also import the [n8n workflow](https://minio.seriousbenentertainment.org:9000/data/Data%20downloading.json) with the context menu on the top right of the workflow page (...) - `Import from File...` or `Import from URL...`.
 - [Tableau](https://www.tableau.com/academic/students)
 - [Snowflake](https://signup.snowflake.com/?)
 - [Power BI](https://app.powerbi.com)
