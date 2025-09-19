@@ -193,14 +193,22 @@ Understanding version control systems is fundamental for modern business analyti
 ## Overview on no-code and low-code tools for data analytics
 
 - [n8n](https://app.n8n.cloud/dashboard)
-  - Follow this short introduction to n8n:
-    1. Create an account on [n8n.cloud](https://app.n8n.cloud/dashboard)
-    2. Create a new workflow
-    3. Add a new node and select "HTTP Request"
-    4. Configure the node to make a GET request to `https://minio.seriousbenentertainment.org:9000/data/Business_Report%20-%202025.csv`
-    5. Add a new node and select "Convert to File"
-    6. See what other possibilities n8n offers you to wrangle the data
-    You can also import the [n8n workflow](https://minio.seriousbenentertainment.org:9000/data/Data%20downloading.json) with the context menu on the top right of the workflow page (...) - `Import from File...` or `Import from URL...`.
+  - Follow these short introductions to n8n workflows:
+    - [Data downloading](https://minio.seriousbenentertainment.org:9000/data/Data%20downloading.json) (import it with the context menu on the top right of the workflow page (...) - `Import from File...` or `Import from URL...`):
+      1. Create an account on [n8n.cloud](https://app.n8n.cloud/dashboard)
+      2. Create a new workflow
+      3. Add a new node and select "HTTP Request"
+      4. Configure the node to make a GET request to `https://minio.seriousbenentertainment.org:9000/data/Business_Report%20-%202025.csv`
+      5. Add a new node and select "Write Binary File"
+      6. Configure the node to write the data to your local disk
+    - [Mediapipe](https://minio.seriousbenentertainment.org:9000/data/Mediapipe.json) (import it with the context menu on the top right of the workflow page (...) - `Import from File...` or `Import from URL...`):
+      1. Create a new workflow
+      2. Add a new node and select "HTTP Request" - configure the node to make a GET request to `https://minio.seriousbenentertainment.org:9000/data/input.mp4`
+      3. Add a new node Extract from File
+      4. Add a new node Build JSON
+      5. Add a new node and select "Mediapipe"
+      6. Add a new node HTTP Request - configure the node to make a POST request to `http://212.227.102.172:8000/mediapipe` 
+      7. Add a new node Github - configure the node to commit the results to the [Github repository](https://github.com/DrBenjamin/Mediapipe)
 - [Tableau](https://www.tableau.com/academic/students)
 - [Snowflake](https://signup.snowflake.com/?)
 - [Power BI](https://app.powerbi.com)
