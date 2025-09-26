@@ -209,8 +209,11 @@ Understanding version control systems is fundamental for modern business analyti
       5. Add a new node and select "Mediapipe"
       6. Add a new node HTTP Request - configure the node to make a POST request to `http://212.227.102.172:8000/mediapipe` 
       7. Add a new node Github - configure the node to commit the results to the [Github repository](https://github.com/DrBenjamin/Mediapipe)
-- [Tableau](https://www.tableau.com/academic/students)
-- [Snowflake](https://signup.snowflake.com/?)
+- [Snowflake](https://www.snowflake.com/)
+      1. Create a free trial account on [Snowflake](https://signup.snowflake.com/)
+- [Tableau](https://www.tableau.com/)
+      1. Download and install Tableau Desktop ([free for students](https://www.tableau.com/academic/students)) or use [Tableau Public](https://public.tableau.com/) online.
+      2. Download the sample data from [here](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 - [Power BI](https://app.powerbi.com)
 - [QlikView](https://www.qlik.com/us/products/qlik-cloud-analytics)
 - [Rapidminer](https://altair.com/altair-rapidminer)
