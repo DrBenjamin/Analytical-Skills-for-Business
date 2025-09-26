@@ -6,7 +6,7 @@ Course **Analytical Skills for Business** in the Master Studies Business Adminis
 
 Setup the Python environment using `conda`:
 
-```bash
+``` bash
 # Create and activate the conda environment
 conda env create -f python/environment.yml
 conda activate r-reticulate
@@ -16,7 +16,7 @@ conda activate r-reticulate
 
 Setup the R environment using `renv`:
 
-```bash
+``` bash
 # Installing renv
 Rscript -e 'source(".Rprofile"); install.packages("renv", repos="https://cloud.r-project.org")'
 
@@ -44,7 +44,7 @@ Rscript -e 'source(".Rprofile"); install.packages("rlang", repos="https://cloud.
 
 In the R console:
 
-```r
+``` r
 # Checking R installation
 R.home("bin")
 file.path(R.home("bin"), "R")
@@ -53,7 +53,7 @@ R.version
 
 check for the correct R version (4.5.0 or higher).
 
-```r
+``` r
 # Installing renv package if not already installed
 install.packages('renv')
 
@@ -71,7 +71,7 @@ renv::status()
 
 Now set up the path in VS Code settings (see `settings.json`) for the `r.libPaths` variable.
 
-```r
+``` r
 # Restoring the R environment from the lockfile
 renv::restore()
 
@@ -82,26 +82,26 @@ renv::snapshot(confirm = FALSE)
 
 Update the project's `.Rprofile`:
 
-```txt
+``` txt
 source("renv/activate.R")
 ```
 
 and create a `.Renviron` file in the project root with the following content:
 
-```txt
+``` txt
 RENV_PROJECT=./
 ```
 
 ### Update R Environment
 
-```r
+``` r
 # Updating renv packages
 renv::update()
 ```
 
 ## Knitting the Document
 
-```bash
+``` bash
 # Knitting the quarto document
 quarto render Analytical_Skills_for_Business.qmd
 ```
