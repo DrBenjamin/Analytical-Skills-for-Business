@@ -189,10 +189,10 @@ Understanding version control systems is fundamental for modern business analyti
 -   **Jupyter:** [Jupyter](https://jupyter.org) is an open-source web application that allows you to create and share documents that contain live code, equations, visualizations, and narrative text. It supports various programming languages, including Python, R, and Julia. Jupyter is widely used for data analysis, machine learning, and scientific computing.
 -   **IDEs:** (Integrated Development Environments): IDEs are software applications that provide comprehensive facilities to computer programmers for software development. They typically include a code editor, a debugger, and build automation tools. Examples of popular IDEs include:
     -   **RStudio:** [RStudio](https://www.rstudio.com) is an integrated development environment (IDE) for R, a programming language for statistical computing and graphics. RStudio provides a user-friendly interface for writing and debugging R code, as well as tools for data visualization and reporting.
-      1. Install R from [CRAN](https://cran.r-project.org)
-      2. Install RStudio from [RStudio](https://www.rstudio.com/products/rstudio/download/)
-      3. Install git (if not already installed) from [git-scm](https://git-scm.com/downloads)
-      4. Follow the lecture to clone the Course GitHub repository and open the project in RStudio [https://github.com/DrBenjamin/Analytical-Skills-for-Business](https://github.com/DrBenjamin/Analytical-Skills-for-Business)
+        1. Install R from [CRAN](https://cran.r-project.org)
+        2. Install RStudio from [RStudio](https://www.rstudio.com/products/rstudio/download/)
+        3. Install git (if not already installed) from [git-scm](https://git-scm.com/downloads)
+        4. Follow the lecture to clone the Course GitHub repository and open the project in RStudio [https://github.com/DrBenjamin/Analytical-Skills-for-Business](https://github.com/DrBenjamin/Analytical-Skills-for-Business)
     -   **Visual Studio Code (VS Code):** [VS Code](https://code.visualstudio.com) is a free source-code editor made by Microsoft for Windows, Linux and macOS. It includes support for debugging, embedded Git control, syntax highlighting, intelligent code completion, snippets, and code refactoring. It is highly customizable, allowing users to change the theme, keyboard shortcuts, preferences, and install extensions that add additional functionality.
 
 ## Overview on no-code and low-code tools for data analytics
@@ -215,7 +215,9 @@ Understanding version control systems is fundamental for modern business analyti
             6.  Add a new node HTTP Request - configure the node to make a POST request to `http://212.227.102.172:8000/mediapipe`
             7.  Add a new node Github - configure the node to commit the results to the [Github repository](https://github.com/DrBenjamin/Mediapipe)
 -   [Snowflake](https://www.snowflake.com/) 1. Create a free trial account on [Snowflake](https://signup.snowflake.com/) 2. Choose the data tutorial and follow the steps.
--   [Tableau](https://www.tableau.com/) 1. Download and install Tableau Desktop ([free for students](https://www.tableau.com/academic/students)) or use [Tableau Public](https://public.tableau.com/) online. 2. Download the sample data from [here](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
+-   [Tableau](https://www.tableau.com/) 
+        1. Download and install Tableau Desktop ([free for students](https://www.tableau.com/academic/students)) or use [Tableau Public](https://public.tableau.com/) online. 
+        2. Download the sample data from [here](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 -   [Power BI](https://app.powerbi.com)
 -   [QlikView](https://www.qlik.com/us/products/qlik-cloud-analytics)
 -   [Rapidminer](https://altair.com/altair-rapidminer)
