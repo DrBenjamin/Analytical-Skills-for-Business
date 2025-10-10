@@ -218,7 +218,7 @@ Understanding version control systems is fundamental for modern business analyti
 -   [QGIS](https://qgis.org)
     - Follow these short introductions to QGIS:
           1. Download and install QGIS from [here](https://qgis.org/download/)
-          2. Download the sample data from [here](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page) 
+          2. Download the sample data from [here](https://github.com/DrBenjamin/Analytical-Skills-for-Business/blob/4cd2ae44b180ab679bfbd562fd96b45fc7343471/topics/Introduction%20to%20tools%20of%20business%20analytics/data/mw_districts.zip/?raw=true) and unzip it.
 -   [Tableau](https://www.tableau.com/)
     - Follow these short introductions to Tableau:
           1. Download and install [Tableau Desktop](https://www.tableau.com/academic/students) which is free for students or use [Tableau Public](https://public.tableau.com/) online.
