@@ -217,7 +217,7 @@ Understanding version control systems is fundamental for modern business analyti
       6.  Add a new node HTTP Request - configure the node to make a POST request to `http://212.227.102.172:8000/mediapipe`
       7.  Add a new node Github - configure the node to commit the results to the [Github repository](https://github.com/DrBenjamin/Mediapipe)
 
-- [**Snowflake**](https://www.snowflake.com/) 
+- [**Streamlit on Snowflake**](https://www.snowflake.com/) 
   - Follow these short introductions to Snowflake:
 
     1. Create a free trial account on [Snowflake](https://signup.snowflake.com/)
