@@ -197,7 +197,7 @@ Understanding version control systems is fundamental for modern business analyti
 
 ## Overview on no-code and low-code tools for data analytics
 
--   [n8n](https://app.n8n.cloud/dashboard)
+-   [**n8n**](https://app.n8n.cloud/dashboard)
     -   Follow these short introductions to n8n workflows:
         -   [Data downloading](https://minio.seriousbenentertainment.org:9000/data/Data%20downloading.json) (import it with the context menu on the top right of the workflow page (...) - `Import from File...` or `Import from URL...`):
             1.  Create an account on [n8n.cloud](https://app.n8n.cloud/dashboard)
@@ -214,9 +214,15 @@ Understanding version control systems is fundamental for modern business analyti
             5.  Add a new node and select "Mediapipe"
             6.  Add a new node HTTP Request - configure the node to make a POST request to `http://212.227.102.172:8000/mediapipe`
             7.  Add a new node Github - configure the node to commit the results to the [Github repository](https://github.com/DrBenjamin/Mediapipe)
--   [Snowflake](https://www.snowflake.com/) 1. Create a free trial account on [Snowflake](https://signup.snowflake.com/) 2. Choose the data tutorial and follow the steps.
--   [QGIS](https://qgis.org)
+
+-   [**Snowflake**](https://www.snowflake.com/) 
+    - Follow these short introductions to Snowflake:
+
+          1. Create a free trial account on [Snowflake](https://signup.snowflake.com/)
+          2. Choose the data tutorial and follow the steps.
+-   [**QGIS**](https://qgis.org)
     - Follow these short introductions to QGIS:
+
           1. Download and install QGIS from [here](https://qgis.org/download/)
           2. Download the sample data from:
               - [here](https://github.com/DrBenjamin/Analytical-Skills-for-Business/blob/4cd2ae44b180ab679bfbd562fd96b45fc7343471/topics/Introduction%20to%20tools%20of%20business%20analytics/data/mw_districts.zip/?raw=true)
@@ -226,15 +232,19 @@ Understanding version control systems is fundamental for modern business analyti
                   `Day2Data`
                   `Day4Data`
                   `mw_districts`
--   [Tableau](https://www.tableau.com/)
+
+-   [**Tableau**](https://www.tableau.com/)
     - Follow these short introductions to Tableau:
+
           1. Download and install [Tableau Desktop](https://www.tableau.com/academic/students) which is free for students or use [Tableau Public](https://public.tableau.com/) online.
           2. Download the sample data from [here](https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
--   [Power BI](https://app.powerbi.com)
+-   [**Power BI**](https://app.powerbi.com)
     - Follow these short introductions to Power BI:
           1. We are using Power BI within MS Teams (it would also be available [here](https://powerbi.microsoft.com/en-us/desktop/) to use as Power BI Desktop Application).
--   [KNIME](https://www.knime.com)
+
+-   [**KNIME**](https://www.knime.com)
     - Follow these short introductions to KNIME:
+
           1. Download and install KNIME Analytics Platform from [here](https://www.knime.com/downloads)
 
 \newpage
