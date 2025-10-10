@@ -228,14 +228,19 @@ Understanding version control systems is fundamental for modern business analyti
 
     1. Download and install QGIS from [here](https://qgis.org/download/)
     2. Download the sample data from:
-      - [here]()
-      and unzip them into one folder - it needs to contain all three subfolders:
+      - [here](https://github.com/DrBenjamin/Analytical-Skills-for-Business/blob/c55a45d37ec5bba3b2a1d18704dd72b4d001de3f/topics/Introduction%20to%20tools%20of%20business%20analytics/data/Malawi.zip/?raw=true)
+      and unzip them into one folder - it needs to contain all these files and sub-folders:
       `Day2Data`
       `Day4Data`
+      `Malawi-healthsites`
       `mw_districts`
+      `mw_shp`
+      `Malawi.qgz`
     3. Open QGIS and open the project file `Malawi.qgs`
     4. Install the plugin "QGIS GeoNode" via the Plugin Manager via the menu `Plugins` -> `Manage and Install Plugins...`
-    5. Open the 
+    5. Open the [MASDAP website](https://www.masdap.mw/developer/) and copy the details for WFS connections.
+    6. Open the Data Source Manager via the menu `Layer` -> `Data Source Manager...` or via the icon on the left toolbar and choose GeoNode Plugin.
+    7. Create a new connection with the details from the MASDAP website and load the layers.
 
 -   [**Tableau**](https://www.tableau.com/)
   - Follow these short introductions to Tableau:
