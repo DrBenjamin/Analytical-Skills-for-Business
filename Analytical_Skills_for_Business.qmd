@@ -233,6 +233,9 @@ Understanding version control systems is fundamental for modern business analyti
       `Day2Data`
       `Day4Data`
       `mw_districts`
+    3. Open QGIS and open the project file `Malawi.qgs`
+    4. Install the plugin "QGIS GeoNode" via the Plugin Manager via the menu `Plugins` -> `Manage and Install Plugins...`
+    5. Open the 
 
 -   [**Tableau**](https://www.tableau.com/)
   - Follow these short introductions to Tableau:
