@@ -400,9 +400,8 @@ xy
 ## Forecasting in predicting future business outcomes
 
 xy
--->
-```
 
+\newpage
 # Literature
 
 All references for this course.
@@ -420,3 +419,9 @@ render_bib("literature/essential_readings.bib")
 source("literature/refmanager.r")
 render_bib("literature/further_readings.bib")
 ```
+
+# Example Exam
+
+To prepare for the exam, please review the following example exam with solutions:
+
+[Example Exam](topics/Example_Exam_with_solutions.pdf)
