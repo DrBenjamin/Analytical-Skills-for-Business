@@ -201,82 +201,82 @@ Understanding version control systems is fundamental for modern business analyti
 
   - Follow these short introductions to n8n workflows:
 
-    - [Data downloading](https://minio.seriousbenentertainment.org:9000/data/Data%20downloading.json) (import it with the context menu on the top right of the workflow page (...) - `Import from File...` or `Import from URL...`):
-      1.  Create an account on [n8n.cloud](https://app.n8n.cloud/dashboard)
-      2.  Create a new workflow
-      3.  Add a new node and select "HTTP Request"
-      4.  Configure the node to make a GET request to `https://minio.seriousbenentertainment.org:9000/data/Business_Report%20-%202025.csv`
-      5.  Add a new node and select "Write Binary File"
-      6.  Configure the node to write the data to your local disk
+      - [Data downloading](https://minio.seriousbenentertainment.org:9000/data/Data%20downloading.json) (import it with the context menu on the top right of the workflow page (...) - `Import from File...` or `Import from URL...`):
+          1.  Create an account on [n8n.cloud](https://app.n8n.cloud/dashboard)
+          2.  Create a new workflow
+          3.  Add a new node and select "HTTP Request"
+          4.  Configure the node to make a GET request to `https://minio.seriousbenentertainment.org:9000/data/Business_Report%20-%202025.csv`
+          5.  Add a new node and select "Write Binary File"
+          6.  Configure the node to write the data to your local disk
 
-    - [Mediapipe](https://minio.seriousbenentertainment.org:9000/data/Mediapipe.json) (import it with the context menu on the top right of the workflow page (...) - `Import from File...` or `Import from URL...`):
-      1.  Create a new workflow
-      2.  Add a new node and select "HTTP Request" - configure the node to make a GET request to `https://minio.seriousbenentertainment.org:9000/data/input.mp4`
-      3.  Add a new node Extract from File
-      4.  Add a new node Build JSON
-      5.  Add a new node and select "MediaPipe"
-      6.  Add a new node HTTP Request - configure the node to make a POST request to `http://212.227.102.172:8000/mediapipe`
-      7.  Add a new node Github - configure the node to commit the results to the [Github repository](https://github.com/DrBenjamin/Mediapipe)
+      - [Mediapipe](https://minio.seriousbenentertainment.org:9000/data/Mediapipe.json) (import it with the context menu on the top right of the workflow page (...) - `Import from File...` or `Import from URL...`):
+          1.  Create a new workflow
+          2.  Add a new node and select "HTTP Request" - configure the node to make a GET request to `https://minio.seriousbenentertainment.org:9000/data/input.mp4`
+          3.  Add a new node Extract from File
+          4.  Add a new node Build JSON
+          5.  Add a new node and select "MediaPipe"
+          6.  Add a new node HTTP Request - configure the node to make a POST request to `http://212.227.102.172:8000/mediapipe`
+          7.  Add a new node Github - configure the node to commit the results to the [Github repository](https://github.com/DrBenjamin/Mediapipe)
 
 - [**Streamlit on Snowflake**](https://www.snowflake.com/)
 
-  - Follow these short introductions to Snowflake:
+    - Follow these short introductions to Snowflake:
 
-    1. Create a free trial account on [Snowflake](https://signup.snowflake.com/)
-    2. Choose the data tutorial and follow the steps.
+        1. Create a free trial account on [Snowflake](https://signup.snowflake.com/)
+        2. Choose the data tutorial and follow the steps.
 
 -   [**QGIS**](https://qgis.org)
 
   - Follow these short introductions to QGIS:
 
-    1. Download and install QGIS from [here](https://qgis.org/download/)
-    2. Download the sample data from:
-      - [here](https://github.com/DrBenjamin/Analytical-Skills-for-Business/blob/c55a45d37ec5bba3b2a1d18704dd72b4d001de3f/topics/Introduction%20to%20tools%20of%20business%20analytics/data/Malawi.zip/?raw=true)
-      and unzip them into one folder - it needs to contain all these files and sub-folders:
-      `Day2Data`
-      `Day4Data`
-      `Malawi-healthsites`
-      `mw_districts`
-      `mw_shp`
-      `Malawi.qgz`
-    3. Open QGIS and open the project file `Malawi.qgs`
-    4. Open [Department of Forestry](http://www.dof.gov.mw/resources/geospatial-data) website and download some or all of the zip files. 
-    5. Add the layers via the menu `Layer` -> `Add layer` -> `Add Vector Layer` and select the shapefiles from the unzipped folders.
+      1. Download and install QGIS from [here](https://qgis.org/download/)
+      2. Download the sample data from:
+          - [here](https://github.com/DrBenjamin/Analytical-Skills-for-Business/blob/c55a45d37ec5bba3b2a1d18704dd72b4d001de3f/topics/Introduction%20to%20tools%20of%20business%20analytics/data/Malawi.zip/?raw=true)
+          and unzip them into one folder - it needs to contain all these files and sub-folders:
+          `Day2Data`
+          `Day4Data`
+          `Malawi-healthsites`
+          `mw_districts`
+          `mw_shp`
+          `Malawi.qgz`
+      3. Open QGIS and open the project file `Malawi.qgs`
+      4. Open [Department of Forestry](http://www.dof.gov.mw/resources/geospatial-data) website and download some or all of the zip files. 
+      5. Add the layers via the menu `Layer` -> `Add layer` -> `Add Vector Layer` and select the shapefiles from the unzipped folders.
 
 -   [**Tableau**](https://www.tableau.com/)
 
-  - Follow these short introductions to Tableau:
+    - Follow these short introductions to Tableau:
 
-    1. Download and install [Tableau Desktop](https://www.tableau.com/academic/students) which is free for students or use [Tableau Public](https://public.tableau.com/) online.
-    2. Download the sample data from [here](https://public.tableau.com/app/profile/jay.narayan/viz/TaxiRideDashboard/Dashboard) and open it in Tableau.
+        1. Download and install [Tableau Desktop](https://www.tableau.com/academic/students) which is free for students or use [Tableau Public](https://public.tableau.com/) online.
+        2. Download the sample data from [here](https://public.tableau.com/app/profile/jay.narayan/viz/TaxiRideDashboard/Dashboard) and open it in Tableau.
 
 -   [**Power BI**](https://app.powerbi.com)
 
-  - Follow these short introductions to Power BI:
+    - Follow these short introductions to Power BI:
 
-    1. We are using Power BI within MS Teams (it would also be available [here](https://powerbi.microsoft.com/en-us/desktop/) to use as Power BI Desktop Application).
-    2. Open an existing Power BI project and make yourself familiar with the interface.
+        1. We are using Power BI within MS Teams (it would also be available [here](https://powerbi.microsoft.com/en-us/desktop/) to use as Power BI Desktop Application).
+        2. Open an existing Power BI project and make yourself familiar with the interface.
 
 -   [**KNIME**](https://www.knime.com)
 
-  - Follow these short introductions to KNIME:
+    - Follow these short introductions to KNIME:
 
-    1. Download and install KNIME Analytics Platform from [here](https://www.knime.com/downloads)
-    2. Create a new KNIME workflow and add a CSV Reader node to read data from a CSV file. Configure the node to use Custom/KNIME URL and add `https://raw.githubusercontent.com/datasciencedojo/datasets/refs/heads/master/titanic.csv` in the URL field. Configure the node to properly read column headers and data types.
-    3. Explore the Data
-      - Add a "Statistics" node to understand the data distribution
-      - Use the "Missing Value" node to identify missing values in columns like Age, Cabin, and Embarked
-    4. Handle Missing Values
-      - For the Age column: use "Missing Value" node with mean or median imputation
-      - For the Cabin column: create a new binary feature indicating whether cabin information is available
-      - For the Embarked column: use mode imputation or remove the few rows with missing values
-    5. Data Transformation
-      - Use "Column Filter" to remove unnecessary columns (e.g., PassengerId, Name, Ticket)
-      - Apply "String Manipulation" for categorical encoding
-      - Use "Normalizer" node for numerical features if needed
-    6. Export Cleaned Data
-      - Use "CSV Writer" node to save the cleaned dataset
-      - Verify the output and check data quality
+        1. Download and install KNIME Analytics Platform from [here](https://www.knime.com/downloads)
+        2. Create a new KNIME workflow and add a CSV Reader node to read data from a CSV file. Configure the node to use Custom/KNIME URL and add `https://raw.githubusercontent.com/datasciencedojo/datasets/refs/heads/master/titanic.csv` in the URL field. Configure the node to properly read column headers and data types.
+        3. Explore the Data
+          - Add a "Statistics" node to understand the data distribution
+          - Use the "Missing Value" node to identify missing values in columns like Age, Cabin, and Embarked
+        4. Handle Missing Values
+          - For the Age column: use "Missing Value" node with mean or median imputation
+          - For the Cabin column: create a new binary feature indicating whether cabin information is available
+          - For the Embarked column: use mode imputation or remove the few rows with missing values
+        5. Data Transformation
+          - Use "Column Filter" to remove unnecessary columns (e.g., PassengerId, Name, Ticket)
+          - Apply "String Manipulation" for categorical encoding
+          - Use "Normalizer" node for numerical features if needed
+        6. Export Cleaned Data
+          - Use "CSV Writer" node to save the cleaned dataset
+          - Verify the output and check data quality
 
 \newpage
 # Descriptive statistics
