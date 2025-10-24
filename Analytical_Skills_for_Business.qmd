@@ -285,11 +285,9 @@ Descriptive statistics summarizes and presents the main features of a dataset so
 
 What we typically summarize:
 
--   Central tendency: 
-    1. mean
-    2. median
-    3. mode 
-    capture a typical or “center” value
+### 1. Central Tendency
+
+Central tendency measures identify the typical or central value in a dataset. The **mean** (arithmetic average) is sensitive to extreme values, making it suitable for symmetric distributions. The **median** (middle value when sorted) is robust to outliers and preferred for skewed data. The **mode** (most frequent value) is useful for categorical data and can identify the most common category or value. In business analytics, choosing the appropriate measure depends on data distribution and the presence of outliers.
 
 ```{r central_tendency, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary libraries
@@ -312,7 +310,9 @@ central_tendency <- data %>%
 print(central_tendency)
 ```
 
--   Variability: range, variance, standard deviation, and interquartile range describe spread
+### 2. Variability
+
+Variability measures quantify data spread around the center. The **range** (maximum minus minimum) provides a simple spread indicator but is sensitive to outliers. **Variance** measures average squared deviations from the mean, while **standard deviation** (square root of variance) expresses spread in original units, facilitating interpretation. The **interquartile range (IQR)** (difference between 75th and 25th percentiles) is robust to outliers and describes middle 50% spread. In business contexts, variability indicates risk, consistency, or process stability.
 
 ```{r variability, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Calculating variability measures
@@ -328,13 +328,130 @@ variability <- data %>%
 print(variability)
 ```
 
--   Distribution shape: skewness and kurtosis characterize symmetry, tails, and outliers
--   Frequencies and percentiles: counts, proportions, quantiles (e.g., quartiles, deciles)
+### 3. Distribution Shape
 
-Common methods:
+Distribution shape characteristics reveal asymmetry and tail behavior. **Skewness** measures distribution asymmetry: positive skewness indicates a right tail (mean > median), negative skewness indicates a left tail (mean < median), and zero indicates symmetry. **Kurtosis** measures tail heaviness and peakedness: high kurtosis indicates heavy tails with more outliers, low kurtosis indicates light tails. These measures help identify data transformations needed and potential outliers in business analytics.
 
--   Numerical methods: compute summary metrics and assemble frequency tables
--   Graphical methods: histograms (continuous data), bar or pie charts (categorical data), box plots (median, quartiles, outliers), and scatter plots (bivariate relationships)
+```{r distribution_shape, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading moments package for skewness and kurtosis
+library(moments)
+
+# Calculating distribution shape measures
+distribution_shape <- data %>%
+  summarise(
+    skewness = skewness(values),
+    kurtosis = kurtosis(values)
+  )
+
+# Printing the results
+print(distribution_shape)
+```
+
+### 4. Frequencies and Percentiles
+
+Frequency analysis counts occurrences and calculates proportions, revealing data distribution patterns. **Percentiles** (quantiles) divide data into equal parts: quartiles (25%, 50%, 75%), deciles (10% intervals), or any custom percentile. These measures identify data position and help detect outliers. In business, percentiles benchmark performance (e.g., top 10% customers) and support decision thresholds.
+
+```{r frequencies_percentiles, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Calculating frequencies and percentiles
+frequencies <- data %>%
+  count(values) %>%
+  mutate(proportion = n / sum(n))
+
+# Printing frequency table
+print(frequencies)
+
+# Calculating various percentiles
+percentiles <- data %>%
+  summarise(
+    q25 = quantile(values, 0.25),
+    q50 = quantile(values, 0.50),  # median
+    q75 = quantile(values, 0.75),
+    q90 = quantile(values, 0.90),
+    q95 = quantile(values, 0.95)
+  )
+
+# Printing percentiles
+print(percentiles)
+```
+
+### 5. Numerical Methods
+
+Numerical methods systematically compute summary statistics and organize data into interpretable structures. **Summary metrics** condense datasets into key statistics (mean, median, standard deviation, quartiles), enabling quick assessment. **Frequency tables** tabulate value counts or binned ranges, revealing distribution patterns. These methods form the foundation for exploratory data analysis and inform subsequent statistical modeling in business analytics.
+
+```{r numerical_methods, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Creating a more comprehensive summary
+summary_metrics <- data %>%
+  summarise(
+    count = n(),
+    min = min(values),
+    q1 = quantile(values, 0.25),
+    median = median(values),
+    mean = mean(values),
+    q3 = quantile(values, 0.75),
+    max = max(values),
+    sd = sd(values),
+    variance = var(values)
+  )
+
+# Printing summary metrics
+print(summary_metrics)
+
+# Creating a frequency table with binned ranges
+binned_data <- data %>%
+  mutate(bin = cut(values, breaks = c(0, 2, 4, 6, Inf), 
+                   labels = c("0-2", "2-4", "4-6", ">6"))) %>%
+  count(bin) %>%
+  mutate(percentage = n / sum(n) * 100)
+
+# Printing frequency table
+print(binned_data)
+```
+
+### 6. Graphical Methods
+
+Graphical methods visualize data distributions and relationships, making patterns immediately recognizable. **Histograms** display continuous data frequency distributions across bins. **Bar and pie charts** compare categorical data frequencies or proportions. **Box plots** show median, quartiles, and outliers, facilitating distributional comparisons. **Scatter plots** reveal bivariate relationships and correlation patterns. In business analytics, visualizations communicate insights to non-technical stakeholders and guide data-driven decisions.
+
+```{r graphical_methods, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=8}
+# Creating a larger dataset for better visualizations
+set.seed(42)
+large_data <- tibble(
+  continuous_var = c(rnorm(100, mean = 50, sd = 10), rnorm(20, mean = 80, sd = 5)),
+  category = sample(c("A", "B", "C", "D"), 120, replace = TRUE),
+  x_var = rnorm(120, mean = 30, sd = 8),
+  y_var = 2 * rnorm(120, mean = 30, sd = 8) + rnorm(120, mean = 0, sd = 5)
+)
+
+# Creating multiple plots
+library(gridExtra)
+
+# Histogram for continuous data
+p1 <- ggplot(large_data, aes(x = continuous_var)) +
+  geom_histogram(bins = 15, fill = "steelblue", color = "white") +
+  labs(title = "Histogram (Continuous Data)", x = "Value", y = "Frequency") +
+  theme_minimal()
+
+# Bar chart for categorical data
+p2 <- ggplot(large_data, aes(x = category)) +
+  geom_bar(fill = "coral") +
+  labs(title = "Bar Chart (Categorical Data)", x = "Category", y = "Count") +
+  theme_minimal()
+
+# Box plot
+p3 <- ggplot(large_data, aes(y = continuous_var)) +
+  geom_boxplot(fill = "lightgreen") +
+  labs(title = "Box Plot (Median, Quartiles, Outliers)", y = "Value") +
+  theme_minimal()
+
+# Scatter plot for bivariate relationship
+p4 <- ggplot(large_data, aes(x = x_var, y = y_var)) +
+  geom_point(color = "darkblue", alpha = 0.6) +
+  geom_smooth(method = "lm", color = "red", se = TRUE) +
+  labs(title = "Scatter Plot (Bivariate Relationship)", x = "X Variable", y = "Y Variable") +
+  theme_minimal()
+
+# Arranging plots in a grid
+grid.arrange(p1, p2, p3, p4, ncol = 2)
+```
 
 Business analytics context:
 
