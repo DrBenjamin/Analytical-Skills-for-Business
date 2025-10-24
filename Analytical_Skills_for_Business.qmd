@@ -267,16 +267,16 @@ Understanding version control systems is fundamental for modern business analyti
           - Add a "Statistics" node to understand the data distribution
           - Use the "Missing Value" node to identify missing values in columns like Age, Cabin, and Embarked
         4. Handle Missing Values
-          - For the Age column: use "Missing Value" node with mean or median imputation
-          - For the Cabin column: create a new binary feature indicating whether cabin information is available
-          - For the Embarked column: use mode imputation or remove the few rows with missing values
+            - For the Age column: use "Missing Value" node with mean or median imputation
+            - For the Cabin column: create a new binary feature indicating whether cabin information is available
+            - For the Embarked column: use mode imputation or remove the few rows with missing values
         5. Data Transformation
-          - Use "Column Filter" to remove unnecessary columns (e.g., PassengerId, Name, Ticket)
-          - Apply "String Manipulation" for categorical encoding
-          - Use "Normalizer" node for numerical features if needed
+            - Use "Column Filter" to remove unnecessary columns (e.g., PassengerId, Name, Ticket)
+            - Apply "String Manipulation" for categorical encoding
+            - Use "Normalizer" node for numerical features if needed
         6. Export Cleaned Data
-          - Use "CSV Writer" node to save the cleaned dataset
-          - Verify the output and check data quality
+            - Use "CSV Writer" node to save the cleaned dataset
+            - Verify the output and check data quality
 
 \newpage
 # Descriptive statistics
@@ -285,8 +285,49 @@ Descriptive statistics summarizes and presents the main features of a dataset so
 
 What we typically summarize:
 
--   Central tendency: mean, median, and mode capture a typical or “center” value
+-   Central tendency: 
+    1. mean
+    2. median
+    3. mode 
+    capture a typical or “center” value
+
+```{r central_tendency, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(tidyverse)
+
+# Creating a sample dataset
+data <- tibble(
+  values = c(1, 2, 2, 3, 4, 5, 100)  # Example data with an outlier
+)
+
+# Calculating central tendency measures
+central_tendency <- data %>%
+  summarise(
+    mean = mean(values),
+    median = median(values),
+    mode = as.numeric(names(sort(table(values), decreasing = TRUE)[1]))
+  )
+
+# Printing the results
+print(central_tendency)
+```
+
 -   Variability: range, variance, standard deviation, and interquartile range describe spread
+
+```{r variability, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Calculating variability measures
+variability <- data %>%
+  summarise(
+    range = max(values) - min(values),
+    variance = var(values),
+    sd = sd(values),
+    iqr = IQR(values)
+  )
+
+# Printing the results
+print(variability)
+```
+
 -   Distribution shape: skewness and kurtosis characterize symmetry, tails, and outliers
 -   Frequencies and percentiles: counts, proportions, quantiles (e.g., quartiles, deciles)
 
