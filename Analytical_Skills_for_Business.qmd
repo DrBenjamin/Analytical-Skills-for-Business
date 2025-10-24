@@ -283,6 +283,8 @@ Understanding version control systems is fundamental for modern business analyti
 
 Descriptive statistics summarizes and presents the main features of a dataset so you can understand what the data look like before modeling or inference. It organizes raw values into clear numerical summaries and visuals, without making probabilistic claims about a wider population. In analytics projects, this first pass helps you validate data quality, spot outliers, and communicate patterns to stakeholders.
 
+See [Types of Data and Types of Variables](https://drbenjamin.github.io/data-science-analytics.html#types-of-data) to build an data wrangling foundation for descriptive statistics.
+
 *What we typically summarize:*
 
 ### 1. Central Tendency
