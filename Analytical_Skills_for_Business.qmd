@@ -283,23 +283,27 @@ Understanding version control systems is fundamental for modern business analyti
 
 Descriptive statistics summarizes and presents the main features of a dataset so you can understand what the data look like before modeling or inference. It organizes raw values into clear numerical summaries and visuals, without making probabilistic claims about a wider population. In analytics projects, this first pass helps you validate data quality, spot outliers, and communicate patterns to stakeholders.
 
-What we typically summarize:
+*What we typically summarize:*
 
 ### 1. Central Tendency
 
-Central tendency measures identify the typical or central value in a dataset. The **mean** (arithmetic average) is sensitive to extreme values, making it suitable for symmetric distributions. The **median** (middle value when sorted) is robust to outliers and preferred for skewed data. The **mode** (most frequent value) is useful for categorical data and can identify the most common category or value. In business analytics, choosing the appropriate measure depends on data distribution and the presence of outliers.
+Central tendency measures identify the typical or central value in a dataset. 
+
+- The **mean** (arithmetic average) is sensitive to extreme values, making it suitable for symmetric distributions. - The **median** (middle value when sorted) is robust to outliers and preferred for skewed data. The **mode** (most frequent value) is useful for categorical data and can identify the most common category or value. In business analytics, choosing the appropriate measure depends on data distribution and the presence of outliers.
+- The **median** (middle value when sorted) is robust to outliers and preferred for skewed data. 
+- The **mode** (most frequent value) is useful for categorical data and can identify the most common category or value. In business analytics, choosing the appropriate measure depends on data distribution and the presence of outliers.
 
 ```{r central_tendency, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary libraries
 library(tidyverse)
 
 # Creating a sample dataset
-data <- tibble(
+sample_data <- tibble(
   values = c(1, 2, 2, 3, 4, 5, 100)  # Example data with an outlier
 )
 
 # Calculating central tendency measures
-central_tendency <- data %>%
+central_tendency <- sample_data %>%
   summarise(
     mean = mean(values),
     median = median(values),
@@ -312,11 +316,16 @@ print(central_tendency)
 
 ### 2. Variability
 
-Variability measures quantify data spread around the center. The **range** (maximum minus minimum) provides a simple spread indicator but is sensitive to outliers. **Variance** measures average squared deviations from the mean, while **standard deviation** (square root of variance) expresses spread in original units, facilitating interpretation. The **interquartile range (IQR)** (difference between 75th and 25th percentiles) is robust to outliers and describes middle 50% spread. In business contexts, variability indicates risk, consistency, or process stability.
+Variability measures quantify data spread around the center.
+
+- The **range** (maximum minus minimum) provides a simple spread indicator but is sensitive to outliers. 
+- The **Variance** measures average squared deviations from the mean, while 
+- The **standard deviation** (square root of variance) expresses spread in original units, facilitating interpretation.
+- The **interquartile range (IQR)** (difference between 75th and 25th percentiles) is robust to outliers and describes middle 50% spread. In business contexts, variability indicates risk, consistency, or process stability.
 
 ```{r variability, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Calculating variability measures
-variability <- data %>%
+variability <- sample_data %>%
   summarise(
     range = max(values) - min(values),
     variance = var(values),
@@ -330,14 +339,20 @@ print(variability)
 
 ### 3. Distribution Shape
 
-Distribution shape characteristics reveal asymmetry and tail behavior. **Skewness** measures distribution asymmetry: positive skewness indicates a right tail (mean > median), negative skewness indicates a left tail (mean < median), and zero indicates symmetry. **Kurtosis** measures tail heaviness and peakedness: high kurtosis indicates heavy tails with more outliers, low kurtosis indicates light tails. These measures help identify data transformations needed and potential outliers in business analytics.
+Distribution shape characteristics reveal asymmetry and tail behavior. 
+
+- The **Skewness** measures distribution asymmetry: positive skewness indicates a right tail (mean > median), negative skewness indicates a left tail (mean < median), and zero indicates symmetry. 
+- The **Kurtosis** measures tail heaviness and peakedness: high kurtosis indicates heavy tails with more outliers, low kurtosis indicates light tails. 
+
+These measures help identify data transformations needed and potential outliers in business analytics.
 
 ```{r distribution_shape, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading moments package for skewness and kurtosis
+library(tidyverse)
 library(moments)
 
 # Calculating distribution shape measures
-distribution_shape <- data %>%
+distribution_shape <- sample_data %>%
   summarise(
     skewness = skewness(values),
     kurtosis = kurtosis(values)
@@ -349,11 +364,18 @@ print(distribution_shape)
 
 ### 4. Frequencies and Percentiles
 
-Frequency analysis counts occurrences and calculates proportions, revealing data distribution patterns. **Percentiles** (quantiles) divide data into equal parts: quartiles (25%, 50%, 75%), deciles (10% intervals), or any custom percentile. These measures identify data position and help detect outliers. In business, percentiles benchmark performance (e.g., top 10% customers) and support decision thresholds.
+Frequency analysis counts occurrences and calculates proportions, revealing data distribution patterns.
+
+- **Percentiles** (quantiles) divide data into equal parts: quartiles (25%, 50%, 75%), deciles (10% intervals), or any custom percentile. 
+
+These measures identify data position and help detect outliers. In business, percentiles benchmark performance (e.g., top 10% customers) and support decision thresholds.
 
 ```{r frequencies_percentiles, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading moments package for skewness and kurtosis
+library(tidyverse)
+
 # Calculating frequencies and percentiles
-frequencies <- data %>%
+frequencies <- sample_data %>%
   count(values) %>%
   mutate(proportion = n / sum(n))
 
@@ -361,7 +383,7 @@ frequencies <- data %>%
 print(frequencies)
 
 # Calculating various percentiles
-percentiles <- data %>%
+percentiles <- sample_data %>%
   summarise(
     q25 = quantile(values, 0.25),
     q50 = quantile(values, 0.50),  # median
@@ -374,13 +396,18 @@ percentiles <- data %>%
 print(percentiles)
 ```
 
+*What are common methods to summarize:*
+
 ### 5. Numerical Methods
 
-Numerical methods systematically compute summary statistics and organize data into interpretable structures. **Summary metrics** condense datasets into key statistics (mean, median, standard deviation, quartiles), enabling quick assessment. **Frequency tables** tabulate value counts or binned ranges, revealing distribution patterns. These methods form the foundation for exploratory data analysis and inform subsequent statistical modeling in business analytics.
+Numerical methods systematically compute summary statistics and organize data into interpretable structures. 
+
+- The **Summary metrics** condense datasets into key statistics (mean, median, standard deviation, quartiles), enabling quick assessment. 
+- The **Frequency tables** tabulate value counts or binned ranges, revealing distribution patterns. These methods form the foundation for exploratory data analysis and inform subsequent statistical modeling in business analytics.
 
 ```{r numerical_methods, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Creating a more comprehensive summary
-summary_metrics <- data %>%
+summary_metrics <- sample_data %>%
   summarise(
     count = n(),
     min = min(values),
@@ -397,7 +424,7 @@ summary_metrics <- data %>%
 print(summary_metrics)
 
 # Creating a frequency table with binned ranges
-binned_data <- data %>%
+binned_data <- sample_data %>%
   mutate(bin = cut(values, breaks = c(0, 2, 4, 6, Inf), 
                    labels = c("0-2", "2-4", "4-6", ">6"))) %>%
   count(bin) %>%
@@ -409,7 +436,12 @@ print(binned_data)
 
 ### 6. Graphical Methods
 
-Graphical methods visualize data distributions and relationships, making patterns immediately recognizable. **Histograms** display continuous data frequency distributions across bins. **Bar and pie charts** compare categorical data frequencies or proportions. **Box plots** show median, quartiles, and outliers, facilitating distributional comparisons. **Scatter plots** reveal bivariate relationships and correlation patterns. In business analytics, visualizations communicate insights to non-technical stakeholders and guide data-driven decisions.
+Graphical methods visualize data distributions and relationships, making patterns immediately recognizable. 
+
+- **Histograms** display continuous data frequency distributions across bins. 
+- **Bar and pie charts** compare categorical data frequencies or proportions. 
+- **Box plots** show median, quartiles, and outliers, facilitating distributional comparisons. 
+- **Scatter plots** reveal bivariate relationships and correlation patterns. In business analytics, visualizations communicate insights to non-technical stakeholders and guide data-driven decisions.
 
 ```{r graphical_methods, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=8}
 # Creating a larger dataset for better visualizations
@@ -455,13 +487,11 @@ grid.arrange(p1, p2, p3, p4, ncol = 2)
 
 Business analytics context:
 
--   For monthly revenue by region, the mean signals typical performance, the standard deviation shows volatility, a box plot quickly flags outliers, and a bar chart compares regions. These summaries guide prioritization (e.g., regions with high variability may require deeper investigation) and set baselines for forecasting and experimentation.
+- For monthly revenue by region, the mean signals typical performance, the standard deviation shows volatility, a box plot quickly flags outliers, and a bar chart compares regions. These summaries guide prioritization (e.g., regions with high variability may require deeper investigation) and set baselines for forecasting and experimentation.
 
-For an accessible overview of types, methods, and examples, see [ResearchMethod.net](https://researchmethod.net/descriptive-statistics/).
+- For an accessible overview of types, methods, and examples, see [ResearchMethod.net](https://researchmethod.net/descriptive-statistics/).
 
 ## Measures of centrality, dispersion, and concentration
-
-xy
 
 ## Descriptive analytics 
 
@@ -484,8 +514,6 @@ of scores, rankings, metrics, and composite indicators.
 
 ## Handling messy data
 
-xy
-
 ## Association
 
 * measuring the association of variables, including correlation and regression
@@ -497,15 +525,9 @@ in the programming language R for practical data analysis.
 \newpage
 # Inferential statistics
 
-xy
-
 ## Basic concepts of statistical inference
 
-xy
-
 ## Quantification of probability through random variables
-
-xy
 
 ## Hypothesis testing
 
@@ -558,19 +580,11 @@ in the programming language R, translating theoretical knowledge into practical 
 \newpage
 # Predictive analytics
 
-xy
-
 ## Data mining techniques
-
-xy
 
 ## Regression analysis
 
-xy
-
 ## Forecasting in predicting future business outcomes
-
-xy
 
 \newpage
 # Literature
