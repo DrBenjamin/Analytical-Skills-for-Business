@@ -291,7 +291,7 @@ See [Types of Data and Types of Variables](https://drbenjamin.github.io/data-sci
 
 Central tendency measures identify the typical or central value in a dataset. 
 
-- The **mean** (arithmetic average) is sensitive to extreme values, making it suitable for symmetric distributions. - The **median** (middle value when sorted) is robust to outliers and preferred for skewed data. The **mode** (most frequent value) is useful for categorical data and can identify the most common category or value. In business analytics, choosing the appropriate measure depends on data distribution and the presence of outliers.
+- The **mean** (arithmetic average) is sensitive to extreme values, making it suitable for symmetric distributions. 
 - The **median** (middle value when sorted) is robust to outliers and preferred for skewed data. 
 - The **mode** (most frequent value) is useful for categorical data and can identify the most common category or value. In business analytics, choosing the appropriate measure depends on data distribution and the presence of outliers.
 
@@ -408,6 +408,9 @@ Numerical methods systematically compute summary statistics and organize data in
 - The **Frequency tables** tabulate value counts or binned ranges, revealing distribution patterns. These methods form the foundation for exploratory data analysis and inform subsequent statistical modeling in business analytics.
 
 ```{r numerical_methods, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(tidyverse)
+
 # Creating a more comprehensive summary
 summary_metrics <- sample_data %>%
   summarise(
@@ -446,6 +449,11 @@ Graphical methods visualize data distributions and relationships, making pattern
 - **Scatter plots** reveal bivariate relationships and correlation patterns. In business analytics, visualizations communicate insights to non-technical stakeholders and guide data-driven decisions.
 
 ```{r graphical_methods, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=8}
+# Loading necessary libraries
+library(tidyverse)
+library(gridExtra)
+library(ggplot2)
+
 # Creating a larger dataset for better visualizations
 set.seed(42)
 large_data <- tibble(
@@ -497,32 +505,380 @@ Business analytics context:
 
 ## Descriptive analytics 
 
-* univariate data
-* bivariate data
-* multivariate data
+Descriptive analytics examines data structures based on the number of variables analyzed simultaneously, enabling appropriate analytical techniques and visualizations for different data complexities.
 
-## Techniques 
+### Univariate data
 
-* constructing
-* interpreting
-* evaluating 
-of scores, rankings, metrics, and composite indicators.
+**Univariate analysis** examines one variable at a time to understand its distribution, central tendency, and variability. It answers questions like "What is typical?" and "How much variation exists?" Common techniques include summary statistics (mean, median, mode, standard deviation), frequency distributions, and visualizations such as histograms, box plots, and bar charts. **Business example:** Analyzing monthly sales revenue to identify typical performance and outliers.
 
-## Visualizing and exploration
+### Bivariate data
 
-* categorical
-* numerical
-* time series data
+**Bivariate analysis** examines relationships between two variables to identify associations, correlations, or dependencies. It answers questions like "How do these variables relate?" and "Does one variable predict another?" Common techniques include correlation coefficients (Pearson, Spearman), cross-tabulation, simple linear regression, and visualizations such as scatter plots and grouped bar charts. **Business example:** Examining the relationship between advertising spend and sales revenue to determine campaign effectiveness.
 
-## Handling messy data
+### Multivariate data
 
-## Association
+**Multivariate analysis** examines three or more variables simultaneously to understand complex relationships, interactions, and patterns. It answers questions like "How do multiple factors jointly influence outcomes?" and "What hidden patterns exist?" Common techniques include multiple regression, principal component analysis (PCA), cluster analysis, and visualizations such as correlation matrices and heatmaps. **Business example:** Analyzing customer demographics, purchase history, and behavioral data simultaneously to identify market segments and predict customer lifetime value.
 
-* measuring the association of variables, including correlation and regression
+## Techniques for Scores, Rankings, Metrics, and Composite Indicators
 
-## Implementing applications 
+Performance measurement in business analytics requires systematic approaches to quantify complex phenomena through structured numerical representations.
 
-in the programming language R for practical data analysis.
+### Constructing
+
+**Construction** involves designing and calculating meaningful measures from raw data. This includes:
+
+- **Score development**: Creating numerical values that represent performance levels (e.g., credit scores, customer satisfaction scores)
+- **Ranking systems**: Ordering entities based on specific criteria (e.g., sales performance rankings, market share positions)
+- **Metric formulation**: Defining key performance indicators (KPIs) that align with business objectives (e.g., conversion rates, ROI, customer lifetime value)
+- **Composite indicators**: Combining multiple metrics into single summary measures (e.g., balanced scorecards, economic indices, sustainability ratings)
+
+**Business example:** Constructing a customer health score by combining purchase frequency, average order value, and engagement metrics with weighted coefficients.
+
+### Interpreting
+
+**Interpretation** translates numerical results into actionable business insights. This requires:
+
+- **Contextualization**: Understanding what scores mean relative to benchmarks, targets, or historical performance
+- **Trend analysis**: Identifying patterns and changes over time
+- **Comparative analysis**: Assessing performance relative to competitors or industry standards
+- **Threshold identification**: Determining critical values that trigger decisions or actions
+
+**Business example:** Interpreting a Net Promoter Score (NPS) of 45 as "good" for the retail industry, but identifying a downward trend requiring investigation.
+
+### Evaluating
+
+**Evaluation** assesses the quality, validity, and effectiveness of measurement systems. Key considerations include:
+
+- **Validity**: Does the measure capture what it intends to measure?
+- **Reliability**: Are results consistent and reproducible?
+- **Sensitivity**: Does the metric detect meaningful changes?
+- **Actionability**: Can insights drive concrete business decisions?
+- **Bias assessment**: Identifying and mitigating systematic errors or unfair representations
+
+**Business example:** Evaluating whether employee performance scores fairly represent actual contributions or reflect demographic biases, leading to refined evaluation criteria.
+
+## Visualizing and Exploration of Data Types
+
+Effective data visualization transforms raw data into visual representations that reveal patterns, trends, and insights. Different data types require specific visualization approaches and exploratory techniques.
+
+### Categorical Data
+
+**Categorical data** represents discrete groups or categories without inherent numerical ordering (nominal) or with meaningful ordering (ordinal). Visualization and exploration focus on frequency distributions and group comparisons.
+
+**Common visualizations:**
+- **Bar charts**: Compare frequencies or proportions across categories
+- **Pie charts**: Show part-to-whole relationships for categorical breakdowns
+- **Stacked bar charts**: Display multiple categorical variables simultaneously
+- **Tree maps**: Visualize hierarchical categorical data with nested rectangles
+- **Mosaic plots**: Show relationships between multiple categorical variables
+
+**Exploratory techniques:**
+- Frequency tables and cross-tabulations
+- Mode identification
+- Chi-square tests for independence
+- Contingency analysis
+
+**Business example:** Visualizing customer segments by region using bar charts, analyzing product category preferences with pie charts, or exploring the relationship between customer type and purchase channel using mosaic plots.
+
+### Numerical Data
+
+**Numerical data** consists of quantitative measurements on continuous or discrete scales. Visualization emphasizes distributions, central tendencies, variability, and relationships between variables.
+
+**Common visualizations:**
+- **Histograms**: Display distribution of continuous variables
+- **Box plots**: Show median, quartiles, and outliers for comparison
+- **Violin plots**: Combine box plots with density curves
+- **Scatter plots**: Reveal relationships between two numerical variables
+- **Line graphs**: Track changes over ordered sequences
+- **Heatmaps**: Display correlation matrices or intensity patterns
+
+**Exploratory techniques:**
+- Summary statistics (mean, median, standard deviation)
+- Distribution analysis (skewness, kurtosis)
+- Outlier detection
+- Correlation analysis
+- Trend identification
+
+**Business example:** Using histograms to analyze revenue distributions, box plots to compare sales performance across quarters, scatter plots to examine the relationship between marketing spend and customer acquisition, or heatmaps to visualize product sales correlations.
+
+### Time Series Data
+
+**Time series data** represents sequential observations measured at successive time points. Visualization and exploration focus on temporal patterns, trends, seasonality, and cyclical behaviors.
+
+**Common visualizations:**
+- **Line charts**: Display trends and patterns over time
+- **Area charts**: Show cumulative values or multiple series stacked
+- **Candlestick charts**: Represent open, high, low, close values (financial data)
+- **Seasonal plots**: Reveal recurring patterns by season or period
+- **Autocorrelation plots**: Identify temporal dependencies
+- **Control charts**: Monitor process stability and detect anomalies
+
+**Exploratory techniques:**
+- Trend analysis (moving averages, smoothing)
+- Seasonality detection (seasonal decomposition)
+- Stationarity testing
+- Lag analysis and autocorrelation
+- Change point detection
+- Anomaly identification
+
+**Business example:** Tracking monthly revenue trends with line charts, identifying seasonal sales patterns using seasonal decomposition, monitoring website traffic fluctuations with control charts, or analyzing stock price movements with candlestick charts to inform investment decisions.
+
+## Handling Messy Data
+
+Real-world data is rarely clean or analysis-ready. Data quality issues compromise analytical accuracy and business decisions. Handling messy data involves identifying, understanding, and resolving various data quality problems through systematic cleaning and transformation processes.
+
+### Common Data Quality Issues
+
+**Missing Values:**
+- **Complete absence**: Entire records or fields are missing
+- **Implicit missingness**: Represented as NULL, NA, empty strings, or placeholder values (e.g., 999, -1)
+- **Patterns**: Missing Completely At Random (MCAR), Missing At Random (MAR), or Missing Not At Random (MNAR)
+
+**Handling strategies:**
+- Deletion (listwise or pairwise) when data is MCAR and missing percentage is low
+- Imputation: mean/median/mode for numerical data, forward/backward fill for time series
+- Model-based imputation: regression, k-nearest neighbors (KNN), multiple imputation
+- Flag creation: adding indicator variables to preserve information about missingness
+
+**Inconsistent Data:**
+- **Format variations**: "New York" vs. "NY" vs. "new york"
+- **Unit inconsistencies**: mixing metric and imperial measurements
+- **Date format variations**: "MM/DD/YYYY" vs. "DD-MM-YYYY"
+- **Encoding issues**: character encoding problems (UTF-8, ASCII)
+
+**Handling strategies:**
+- Standardization: converting to consistent formats and units
+- Text normalization: lowercasing, trimming whitespace, removing special characters
+- Date parsing with explicit format specifications
+- Encoding conversion and validation
+
+**Duplicate Records:**
+- **Exact duplicates**: Identical records across all fields
+- **Near duplicates**: Records representing the same entity with slight variations
+- **Logical duplicates**: Same entity with different identifiers
+
+**Handling strategies:**
+- Exact match removal using unique identifiers
+- Fuzzy matching for near duplicates (Levenshtein distance, Jaccard similarity)
+- Record linkage and deduplication algorithms
+- Master data management (MDM) approaches
+
+**Outliers and Anomalies:**
+- **Statistical outliers**: Values beyond expected range (e.g., 3 standard deviations from mean)
+- **Domain outliers**: Values impossible or implausible in business context (negative ages, future dates)
+- **Data entry errors**: Typos or transposition errors
+
+**Handling strategies:**
+- Detection: Z-score, IQR method, isolation forests, DBSCAN clustering
+- Investigation: determine if outliers are errors or valid extreme values
+- Treatment: removal, capping/winsorizing, transformation, or separate analysis
+- Domain validation: implementing business rules and constraints
+
+**Structural Issues:**
+- **Wrong data types**: Numbers stored as text, dates as strings
+- **Improper granularity**: Data too aggregated or too detailed for analysis
+- **Denormalized structures**: Redundant or poorly organized data
+- **Schema mismatches**: Incompatible structures when merging datasets
+
+**Handling strategies:**
+- Type conversion with validation
+- Aggregation or disaggregation to appropriate levels
+- Normalization and restructuring (wide-to-long, long-to-wide transformations)
+- Schema mapping and harmonization
+
+### Data Cleaning Workflow
+
+**1. Profiling and Assessment:**
+- Examine data distributions, completeness, and patterns
+- Generate data quality reports
+- Identify specific issues and their prevalence
+
+**2. Validation:**
+- Define business rules and constraints
+- Implement validation checks (range checks, format checks, logical consistency)
+- Flag violations for review
+
+**3. Cleaning:**
+- Apply correction strategies systematically
+- Document all transformations
+- Maintain audit trails
+
+**4. Verification:**
+- Validate cleaned data against quality criteria
+- Compare before/after statistics
+- Conduct spot checks and sample reviews
+
+**5. Documentation:**
+- Record all cleaning decisions and rationale
+- Create data dictionaries
+- Document assumptions and limitations
+
+### Tools and Techniques in R
+
+**R packages for data cleaning:**
+- `tidyverse` (dplyr, tidyr): Data manipulation and reshaping
+- `janitor`: Data cleaning utilities and tabulation
+- `naniar`, `mice`: Missing data visualization and imputation
+- `stringr`, `stringi`: Text cleaning and manipulation
+- `lubridate`: Date-time parsing and manipulation
+- `validate`, `assertr`: Data validation
+- `dedupr`, `RecordLinkage`: Deduplication
+
+**Business example:** A retail company discovers that their customer database contains 15% missing email addresses, duplicate customer records with slight name variations (e.g., "John Smith" vs. "J. Smith"), inconsistent country codes ("USA" vs. "US" vs. "United States"), and impossible birth dates (e.g., year 1899). The data cleaning process involves: 
+1. Flagging missing emails for targeted collection campaigns
+2. Using fuzzy matching to merge duplicate customer profiles while preserving transaction history
+3. Standardizing country codes using ISO standards
+4. Validating and correcting birth dates using business rules (customers must be 18+ years old)
+5. Creating a cleaned, analysis-ready dataset that improves customer segmentation accuracy and marketing campaign targeting.
+
+## Association: Measuring Relationships Between Variables
+
+Association analysis examines how variables relate to each other, quantifying the strength, direction, and nature of relationships. Understanding associations is fundamental for identifying patterns, making predictions, and uncovering causal mechanisms in business analytics.
+
+### Correlation Analysis
+
+**Correlation** measures the strength and direction of linear relationships between two variables, producing coefficients ranging from -1 (perfect negative correlation) to +1 (perfect positive correlation), with 0 indicating no linear relationship.
+
+**Types of Correlation Coefficients:**
+
+**Pearson Correlation (r):**
+- Measures linear relationships between continuous variables
+- Assumes normally distributed data
+- Sensitive to outliers
+- Interpretation: r = 0.7-1.0 (strong), 0.4-0.7 (moderate), 0.1-0.4 (weak)
+
+**Spearman Rank Correlation (ρ):**
+- Measures monotonic relationships (not necessarily linear)
+- Non-parametric alternative to Pearson
+- Works with ordinal data
+- Robust to outliers and non-normal distributions
+
+**Kendall's Tau (τ):**
+- Measures ordinal associations
+- Better for small sample sizes
+- More robust than Spearman for tied ranks
+
+**Key Considerations:**
+- **Correlation ≠ Causation**: Strong correlation doesn't imply one variable causes changes in another
+- **Spurious correlations**: Unrelated variables may correlate due to confounding factors or coincidence
+- **Non-linear relationships**: Correlation coefficients may miss curved or complex patterns
+- **Range restrictions**: Limited variable ranges can artificially reduce correlation
+
+**Business example:** Analyzing the correlation between advertising spend and sales revenue (r = 0.82) suggests a strong positive linear relationship, but further analysis is needed to establish causality and account for seasonal effects, competitor actions, and other factors.
+
+### Regression Analysis
+
+**Regression** models relationships between variables to predict outcomes, estimate effects, and understand dependencies. It quantifies how changes in independent variables (predictors) relate to changes in dependent variables (outcomes).
+
+**Simple Linear Regression:**
+- Models relationship between one predictor and one outcome
+- Equation: Y = β₀ + β₁X + ε
+- β₀ (intercept): predicted Y when X = 0
+- β₁ (slope): change in Y for one-unit increase in X
+- ε (error term): unexplained variation
+
+**Multiple Linear Regression:**
+- Models relationships with multiple predictors
+- Equation: Y = β₀ + β₁X₁ + β₂X₂ + ... + βₙXₙ + ε
+- Controls for confounding variables
+- Allows estimation of partial effects
+
+**Model Evaluation Metrics:**
+
+**R-squared (R²):**
+- Proportion of variance explained by the model (0 to 1)
+- Higher values indicate better fit
+- Can be inflated by adding predictors
+
+**Adjusted R-squared:**
+- Penalizes model complexity
+- Preferred for comparing models with different numbers of predictors
+
+**Root Mean Squared Error (RMSE):**
+- Average prediction error in original units
+- Lower values indicate better predictions
+
+**Residual Analysis:**
+- Examining prediction errors to validate assumptions
+- Checking for patterns, heteroscedasticity, and normality
+
+**Key Assumptions:**
+- **Linearity**: Relationship between variables is linear
+- **Independence**: Observations are independent
+- **Homoscedasticity**: Constant variance of errors
+- **Normality**: Residuals are normally distributed
+- **No multicollinearity**: Predictors are not highly correlated (for multiple regression)
+
+**Types of Relationships:**
+
+**Positive Association:**
+- Both variables increase together
+- Example: Education level and income
+
+**Negative Association:**
+- One variable increases as the other decreases
+- Example: Price and demand
+
+**No Association:**
+- Variables are unrelated
+- Changes in one don't predict changes in the other
+
+**Non-linear Association:**
+- Curved or complex relationships
+- May require polynomial regression or transformation
+
+**Practical Applications in Business:**
+
+**Predictive Modeling:**
+- Sales forecasting based on historical data
+- Customer lifetime value prediction
+- Demand estimation
+
+**Risk Assessment:**
+- Credit scoring models
+- Insurance premium calculation
+- Investment risk evaluation
+
+**Optimization:**
+- Pricing strategies
+- Resource allocation
+- Marketing mix optimization
+
+**Causal Inference:**
+- Treatment effect estimation
+- A/B testing analysis
+- Policy impact evaluation
+
+**Business example:** A subscription-based software company builds a multiple regression model to predict customer churn:
+
+```
+Churn Probability = β₀ + β₁(Login_Frequency) + β₂(Support_Tickets) + β₃(Feature_Usage) + β₄(Contract_Length) + ε
+```
+
+Results show:
+- Login frequency has a strong negative effect (β₁ = -0.35): more active users are less likely to churn
+- Support tickets have a positive effect (β₂ = 0.18): customers with issues are more likely to leave
+- Feature usage has a moderate negative effect (β₃ = -0.22)
+- Contract length has a strong negative effect (β₄ = -0.41): longer commitments reduce churn
+
+The model achieves R² = 0.67, explaining 67% of churn variance. These insights inform retention strategies: improving onboarding to increase feature adoption, proactively addressing support issues, and incentivizing longer contracts.
+
+### Correlation vs. Regression
+
+**Correlation:**
+- Symmetric relationship (X-Y same as Y-X)
+- No distinction between dependent and independent variables
+- Describes strength and direction only
+- Single coefficient summarizes relationship
+
+**Regression:**
+- Asymmetric relationship (predicting Y from X)
+- Clear dependent and independent variables
+- Provides prediction equation
+- Estimates effect sizes and intercepts
+- Allows statistical inference about relationships
+
+Both techniques complement each other in comprehensive data analysis, with correlation providing initial relationship exploration and regression enabling detailed modeling and prediction.
 
 \newpage
 # Inferential statistics
