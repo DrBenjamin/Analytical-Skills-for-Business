@@ -927,9 +927,141 @@ For comprehensive coverage of hypothesis testing concepts, methodologies, and ap
 
 Understanding hypothesis testing is essential for making informed business decisions based on data analysis, forming the foundation for advanced statistical inference and predictive analytics in business contexts.
 
-## Confidence intervals, p-values, and statistical tests
+## Confidence Intervals, P-Values, and Statistical Tests
 
-xy
+Confidence intervals, p-values, and statistical tests are interconnected concepts in inferential statistics that work together to support evidence-based decision-making and quantify uncertainty in business analytics.
+
+### Confidence Intervals
+
+**Confidence intervals (CIs)** provide a range of plausible values for population parameters based on sample data, expressing uncertainty around point estimates with a specified confidence level (typically 95%).
+
+**Interpretation:**
+- A 95% CI means that if we repeatedly sampled from the population and calculated confidence intervals, approximately 95% of those intervals would contain the true population parameter
+- Wider intervals indicate greater uncertainty; narrower intervals suggest more precise estimates
+- The interval provides both a point estimate (usually the center) and a margin of error
+
+**Common Types:**
+- **CI for means**: Estimates average values (e.g., average customer satisfaction score: 7.2 ± 0.5)
+- **CI for proportions**: Estimates percentages (e.g., conversion rate: 12% ± 2%)
+- **CI for differences**: Compares groups (e.g., A/B test difference: 3.5% ± 1.2%)
+- **CI for regression coefficients**: Quantifies predictor effects with uncertainty
+
+**Business application:** A marketing team tests a new email campaign and observes a 15% click-through rate in a sample of 500 customers. The 95% CI is [12.3%, 17.7%], indicating they can be 95% confident the true population click-through rate lies within this range.
+
+### P-Values
+
+**P-values** quantify the strength of evidence against the null hypothesis, representing the probability of observing results as extreme as or more extreme than those obtained, assuming the null hypothesis is true.
+
+**Interpretation Guidelines:**
+- **p < 0.01**: Very strong evidence against H₀ (highly significant)
+- **p < 0.05**: Strong evidence against H₀ (statistically significant)
+- **p < 0.10**: Moderate evidence against H₀ (marginally significant)
+- **p ≥ 0.10**: Insufficient evidence to reject H₀ (not significant)
+
+**Key Considerations:**
+- P-values do NOT measure the probability that the null hypothesis is true
+- P-values do NOT measure effect size or practical importance
+- Smaller p-values indicate stronger evidence, but don't guarantee meaningful effects
+- Statistical significance (small p-value) ≠ practical significance (meaningful effect)
+- P-values can be influenced by sample size: large samples may yield significant p-values for trivial effects
+
+**Common Misinterpretations to Avoid:**
+- ❌ "p = 0.03 means there's a 3% chance the null hypothesis is true"
+- ❌ "p > 0.05 proves the null hypothesis is correct"
+- ✓ "p = 0.03 means that if the null hypothesis were true, we'd see results this extreme only 3% of the time"
+
+**Business application:** Testing whether a new product feature increases user engagement, researchers obtain p = 0.02, indicating that if the feature had no effect, results this extreme would occur only 2% of the time—strong evidence the feature has an impact.
+
+### Common Statistical Tests
+
+Statistical tests evaluate hypotheses about population parameters, each suited for specific data types and research questions.
+
+**Tests for Means:**
+
+**t-test:**
+- **One-sample t-test**: Compare sample mean to known value (e.g., Is average satisfaction score different from 7.0?)
+- **Independent samples t-test**: Compare means between two groups (e.g., Do customers in Region A spend more than Region B?)
+- **Paired samples t-test**: Compare means for related observations (e.g., Before/after treatment comparisons)
+
+**ANOVA (Analysis of Variance):**
+- Compares means across three or more groups
+- Identifies whether at least one group differs significantly
+- Example: Comparing sales performance across four sales regions
+
+**Tests for Proportions:**
+
+**Z-test for proportions:**
+- Compare sample proportion to known value
+- Compare proportions between two groups
+- Example: Is conversion rate significantly higher for Treatment A vs. Control?
+
+**Chi-square test:**
+- Tests independence between categorical variables
+- Example: Is customer satisfaction level related to product category?
+
+**Tests for Associations:**
+
+**Correlation test:**
+- Evaluates significance of correlation coefficients
+- Tests whether observed correlation differs from zero
+- Example: Is there a significant relationship between advertising spend and revenue?
+
+**Regression F-test:**
+- Tests overall model significance
+- Evaluates whether predictors collectively explain variance
+- Example: Do customer demographics significantly predict purchase behavior?
+
+**Non-parametric Tests:**
+
+When data violates normality assumptions, use distribution-free alternatives:
+- **Mann-Whitney U test**: Non-parametric alternative to independent t-test
+- **Wilcoxon signed-rank test**: Non-parametric alternative to paired t-test
+- **Kruskal-Wallis test**: Non-parametric alternative to ANOVA
+
+### Interconnections
+
+These concepts work together in hypothesis testing:
+
+**Relationship between CIs and p-values:**
+- If a 95% CI for a difference excludes zero, the corresponding p-value will be < 0.05
+- If a 95% CI includes zero, the p-value will be > 0.05
+- CIs provide more information than p-values: they show effect size, direction, and precision
+
+**Relationship between p-values and significance level (α):**
+- If p < α (commonly 0.05), reject the null hypothesis
+- If p ≥ α, fail to reject the null hypothesis
+- The α level defines Type I error rate (false positive rate)
+
+**Choosing the Right Test:**
+Consider:
+1. **Data type**: Continuous, categorical, ordinal?
+2. **Number of groups**: One, two, or more?
+3. **Independence**: Related or unrelated samples?
+4. **Assumptions**: Normality, equal variances?
+5. **Research question**: Difference, association, or prediction?
+
+**Business Decision Framework:**
+
+1. **Statistical Significance**: Does the p-value indicate a real effect? (p < 0.05)
+2. **Effect Size**: Is the magnitude practically meaningful? (examine CIs and Cohen's d)
+3. **Business Impact**: Does this translate to meaningful outcomes? (revenue, retention, satisfaction)
+4. **Cost-Benefit**: Do benefits outweigh implementation costs?
+
+**Example Integration:** An e-commerce company tests a new checkout design:
+- **Sample data**: 1,000 users per version (old vs. new)
+- **Conversion rates**: Old = 12.0%, New = 14.5%
+- **Statistical test**: Two-proportion z-test
+- **Results**: 
+  - Difference: 2.5 percentage points
+  - 95% CI: [0.8%, 4.2%]
+  - p-value: 0.004
+- **Interpretation**:
+  - **Statistically significant**: p = 0.004 < 0.05 (strong evidence of a difference)
+  - **Effect size**: 2.5 percentage point increase (20.8% relative improvement)
+  - **Precision**: 95% confident the true improvement is between 0.8% and 4.2%
+- **Business decision**: Implement new design; with 100,000 monthly users, this represents an estimated 2,500 additional conversions monthly
+
+This integrated approach ensures decisions are statistically sound, practically meaningful, and aligned with business objectives.
 
 ## Inferential statistics 
 
