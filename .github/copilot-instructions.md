@@ -1,4 +1,4 @@
-# Copilot Instructions for BenBox
+# Copilot Instructions for course material
 
 Dearest Copilot,
 this project is the **Analytical Skills for Business** course material for students of the Fresenius University of Applied Sciences.
