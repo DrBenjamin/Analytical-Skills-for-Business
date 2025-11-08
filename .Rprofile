@@ -1,3 +1,4 @@
+source("/Users/ben/Documents/Studies/Business Administration (M. A.)/Analytical Skills for Business/Projects/Analytical-Skills-for-Business/renv/activate.R")
 # Setting renv configuration options BEFORE activating renv so they are
 # respected by the activation script.
 # Setting/Enabling pak support and locking behavior as requested.

@@ -370,6 +370,7 @@ Frequency analysis counts occurrences and calculates proportions, revealing data
 
 - **Percentiles** (quantiles) divide data into equal parts: quartiles (25%, 50%, 75%), deciles (10% intervals), or any custom percentile. 
 
+![**Source:** *https://online.stat.psu.edu/stat800/*](./topics/Descriptive%20statistics/percentiles.png)
 These measures identify data position and help detect outliers. In business, percentiles benchmark performance (e.g., top 10% customers) and support decision thresholds.
 
 ```{r frequencies_percentiles, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
