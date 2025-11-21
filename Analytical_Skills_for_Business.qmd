@@ -797,6 +797,63 @@ Association analysis examines how variables relate to each other, quantifying th
 
 **Business example:** Analyzing the correlation between advertising spend and sales revenue (r = 0.82) suggests a strong positive linear relationship, but further analysis is needed to establish causality and account for seasonal effects, competitor actions, and other factors.
 
+```{r example_correlation, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(ourdata)
+library(dplyr)
+
+# Creating data frames from the ourdata package datasets
+hdi_df <- hdi
+imr_df <- imr
+
+# Combining two data frames
+combined_df <- ourdata::combine(imr_df$name, hdi_df$country, imr_df$`deaths/1`, hdi_df$HumanDevelopmentIndex_2024, 
+                                col1 = "Country", col2 = "IMR", col3 = "HDI")
+
+# or combining with dplyr
+combined_df <- inner_join(imr_df, hdi_df, by = c("name" = "country")) %>%
+  select(Country = name, IMR = `deaths/1`, HDI = HumanDevelopmentIndex_2024)
+
+# Calculating Pearson correlation coefficient
+pearson_cor <- cor(combined_df$HDI, combined_df$IMR, method = "pearson")
+
+# Calculating Spearman correlation coefficient (rank-based, robust to outliers)
+spearman_cor <- cor(combined_df$HDI, combined_df$IMR, method = "spearman")
+
+# Performing correlation test (includes p-value and confidence interval)
+cor_test <- cor.test(combined_df$HDI, combined_df$IMR, method = "pearson")
+
+# Printing correlation results
+cat("Correlation Analysis: HDI vs IMR\n")
+cat("================================\n\n")
+cat("Pearson Correlation Coefficient:", round(pearson_cor, 4), "\n")
+cat("Spearman Correlation Coefficient:", round(spearman_cor, 4), "\n\n")
+cat("Correlation Test Results:\n")
+print(cor_test)
+
+# Creating scatter plot with correlation annotation
+plot(combined_df$HDI, combined_df$IMR, 
+     main = "Correlation between HDI and IMR",
+     sub = paste("Pearson r =", round(pearson_cor, 3), 
+                 "| p-value =", format(cor_test$p.value, scientific = TRUE, digits = 3)),
+     ylab = "IMR (Infant Mortality Rate)", 
+     xlab = "HDI (Human Development Index)",
+     pch = 19,
+     col = "darkblue")
+
+# Adding correlation interpretation text
+if (abs(pearson_cor) >= 0.7) {
+  strength <- "strong"
+} else if (abs(pearson_cor) >= 0.4) {
+  strength <- "moderate"
+} else {
+  strength <- "weak"
+}
+direction <- ifelse(pearson_cor < 0, "negative", "positive")
+cat("\nInterpretation:\n")
+cat("There is a", strength, direction, "correlation between HDI and IMR.\n")
+```
+
 ### Regression Analysis
 
 **Regression** models relationships between variables to predict outcomes, estimate effects, and understand dependencies. It quantifies how changes in independent variables (predictors) relate to changes in dependent variables (outcomes).
@@ -912,7 +969,7 @@ The model achieves R² = 0.67, explaining 67% of churn variance. These insights 
 
 **Example linear regression analysis and storytelling:**
 
-```{r example_regression_storytelling, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r example_regression, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary libraries
 library(ourdata)
 library(dplyr)
@@ -930,9 +987,11 @@ combined_df <- inner_join(imr_df, hdi_df, by = c("name" = "country")) %>%
   select(Country = name, IMR = `deaths/1`, HDI = HumanDevelopmentIndex_2024)
 
 # Creating scatter plot
-plot(combined_df$HDI, combined_df$IMR, main = "Influence of HDI (Human Development Index) on IMR (Infant Mortality Rate)",
-     sub = "HDI = Independent Variable) / IMR = Dependent Variable", ylab = "IMR", xlab = "HDI")
-     
+plot(combined_df$HDI, combined_df$IMR, 
+  main = "Influence of HDI (Human Development Index) on IMR (Infant Mortality Rate)",
+  sub = "HDI = Independent Variable) / IMR = Dependent Variable",
+  ylab = "IMR", xlab = "HDI")
+
 # Adding regression line
 model <- lm(combined_df$IMR ~ combined_df$HDI)
 abline(model, col = "red")
