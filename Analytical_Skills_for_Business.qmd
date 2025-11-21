@@ -218,6 +218,9 @@ Understanding version control systems is fundamental for modern business analyti
           6.  Add a new node HTTP Request - configure the node to make a POST request to `http://212.227.102.172:8000/mediapipe`
           7.  Add a new node Github - configure the node to commit the results to the [Github repository](https://github.com/DrBenjamin/Mediapipe)
 
+      - In late 2025 there was a free [n8n certification
+        course](https://docs.n8n.io/courses/level-one/) added to the n8n documentation.
+
 - [**Streamlit on Snowflake**](https://www.snowflake.com/)
 
     - Follow these short introductions to Snowflake:
@@ -517,6 +520,8 @@ Data types in business analytics can be classified based on the number of variab
 ### Multivariate data
 
 **Multivariate analysis** examines three or more variables simultaneously to understand complex relationships, interactions, and patterns. It answers questions like "How do multiple factors jointly influence outcomes?" and "What hidden patterns exist?" Common techniques include multiple regression, principal component analysis (PCA), cluster analysis, and visualizations such as correlation matrices and heatmaps. **Business example:** Analyzing customer demographics, purchase history, and behavioral data simultaneously to identify market segments and predict customer lifetime value.
+
+![**Source:** *KNIME*](./topics/Descriptive%20statistics/data_analysis.png)
 
 ## Techniques for Scores, Rankings, Metrics, and Composite Indicators
 
@@ -904,6 +909,61 @@ Results show:
 - Contract length has a strong negative effect (β₄ = -0.41): longer commitments reduce churn
 
 The model achieves R² = 0.67, explaining 67% of churn variance. These insights inform retention strategies: improving onboarding to increase feature adoption, proactively addressing support issues, and incentivizing longer contracts.
+
+**Example linear regression analysis and storytelling:**
+
+```{r example_regression_storytelling, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library(ourdata)
+library(dplyr)
+
+# Creating data frames from the ourdata package datasets
+hdi_df <- hdi
+imr_df <- imr
+
+# Combining two data frames
+combined_df <- ourdata::combine(imr_df$name, hdi_df$country, imr_df$`deaths/1`, hdi_df$HumanDevelopmentIndex_2024, 
+                                col1 = "Country", col2 = "IMR", col3 = "HDI")
+
+# or combining with dplyr
+combined_df <- inner_join(imr_df, hdi_df, by = c("name" = "country")) %>%
+  select(Country = name, IMR = `deaths/1`, HDI = HumanDevelopmentIndex_2024)
+
+# Creating scatter plot
+plot(combined_df$HDI, combined_df$IMR, main = "Influence of HDI (Human Development Index) on IMR (Infant Mortality Rate)",
+     sub = "HDI = Independent Variable) / IMR = Dependent Variable", ylab = "IMR", xlab = "HDI")
+     
+# Adding regression line
+model <- lm(combined_df$IMR ~ combined_df$HDI)
+abline(model, col = "red")
+
+# Showing summary of the model
+summary(model)
+```
+
+**Conclusion and interpretation of the results:**
+
+The fitted linear model (IMR \~ HDI) shows a very strong, negative
+association: the HDI coefficient is −113.23 (SE = 4.73, t = −23.92, p \<
+2e‑16).
+
+This means that a one-unit increase in HDI (note: HDI ranges roughly
+0–1) is associated with a predicted decrease in infant mortality of
+about 113 deaths per 1,000 live births.
+
+Practical meaning Higher human development (better education, income and
+health components of HDI) is strongly associated with lower infant
+mortality.
+
+Caveats and diagnostics to check Correlation ≠ causation: this is
+observational. Confounding (e.g., health spending, access to care,
+urbanization) could drive both HDI and IMR. Avoid causal claims without
+further analysis.
+
+Summary HDI and IMR are strongly negatively associated: higher HDI is
+linked to substantially lower infant mortality (HDI explains \~77% of
+IMR variation here), but confirmatory causal analysis and diagnostic
+checks are needed before policy attribution.
 
 ### Correlation vs. Regression
 
