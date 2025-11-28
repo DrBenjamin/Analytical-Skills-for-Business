@@ -569,13 +569,92 @@ Effective data visualization transforms raw data into visual representations tha
 
 **Categorical data** represents discrete groups or categories without inherent numerical ordering (nominal) or with meaningful ordering (ordinal). Visualization and exploration focus on frequency distributions and group comparisons.
 
+```{r graphical_methods, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=8}
+# Loading necessary libraries
+library(tidyverse)
+
+# Creating a sample nominal categorical dataset
+nominal_data <- tibble(
+  category = sample(c("B", "C", "A", "D"), 10, replace = TRUE)
+)
+
+# Creating a sample ordinal categorical dataset
+ordinal_data <- tibble(
+  rating = factor(sample(c("Excellent", "Good", "Poor", "Fair", "Very Good"), 10,
+                  replace = TRUE),
+                  levels = c("Poor", "Fair", "Good", "Very Good", "Excellent"), 
+                  ordered = TRUE)
+)
+
+# Displaying the nominal and ordinal data
+print(nominal_data)
+print(ordinal_data)
+
+# Displaying ordered levels of ordinal data
+levels(ordinal_data$rating)
+```
+
 **Common visualizations:**
 
 - **Bar charts**: Compare frequencies or proportions across categories
+
+```{r bar_chart_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+ggplot(nominal_data, aes(x = category)) +
+  geom_bar(fill = "steelblue") +
+  labs(title = "Bar Chart", x = "Category", y = "Count") +
+  theme_minimal()
+```
+
 - **Pie charts**: Show part-to-whole relationships for categorical breakdowns
+
+```{r pie_chart_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+category_counts <- as.data.frame(table(nominal_data$category))
+ggplot(category_counts, aes(x = "", y = Freq, fill = Var1)) +
+  geom_bar(stat = "identity", width = 1) +
+  coord_polar("y") +
+  labs(title = "Pie Chart", fill = "Category") +
+  theme_void()
+```
+
 - **Stacked bar charts**: Display multiple categorical variables simultaneously
+
+```{r stacked_bar_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+combined_cat_data <- data.frame(
+  category = rep(c("A", "B", "C"), each = 3),
+  subcategory = rep(c("X", "Y", "Z"), 3),
+  count = c(5, 3, 2, 4, 6, 3, 7, 2, 4)
+)
+ggplot(combined_cat_data, aes(x = category, y = count, fill = subcategory)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Stacked Bar Chart", x = "Category", y = "Count") +
+  theme_minimal()
+```
+
 - **Tree maps**: Visualize hierarchical categorical data with nested rectangles
+
+```{r treemap_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(treemap)
+treemap_data <- data.frame(
+  category = c("A", "B", "C", "D"),
+  value = c(30, 45, 15, 10)
+)
+treemap(treemap_data, index = "category", vSize = "value",
+        title = "Tree Map", palette = "Set2")
+```
+
 - **Mosaic plots**: Show relationships between multiple categorical variables
+
+```{r mosaic_plot_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+mosaic_data <- data.frame(
+  category = sample(c("A", "B"), 50, replace = TRUE),
+  rating = sample(c("Good", "Poor"), 50, replace = TRUE)
+)
+mosaicplot(table(mosaic_data$category, mosaic_data$rating),
+           main = "Mosaic Plot", color = TRUE)
+```
 
 **Exploratory techniques:**
 
@@ -590,14 +669,86 @@ Effective data visualization transforms raw data into visual representations tha
 
 **Numerical data** consists of quantitative measurements on continuous or discrete scales. Visualization emphasizes distributions, central tendencies, variability, and relationships between variables.
 
+```{r numeric_data_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Creating a sample numerical dataset
+numerical_data <- tibble(
+  value1 = rnorm(100, mean = 50, sd = 10),
+  value2 = rnorm(100, mean = 30, sd = 5)
+)
+
+# Displaying the numerical data
+print(numerical_data)
+```
+
 **Common visualizations:**
 
 - **Histograms**: Display distribution of continuous variables
+
+```{r histogram_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+ggplot(numerical_data, aes(x = value1)) +
+  geom_histogram(bins = 20, fill = "steelblue", color = "white") +
+  labs(title = "Histogram", x = "Value", y = "Frequency") +
+  theme_minimal()
+```
+
 - **Box plots**: Show median, quartiles, and outliers for comparison
+
+```{r boxplot_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+ggplot(numerical_data, aes(y = value1)) +
+  geom_boxplot(fill = "lightgreen") +
+  labs(title = "Box Plot", y = "Value") +
+  theme_minimal()
+```
+
 - **Violin plots**: Combine box plots with density curves
+
+```{r violin_plot_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+ggplot(numerical_data, aes(x = "", y = value1)) +
+  geom_violin(fill = "coral") +
+  labs(title = "Violin Plot", x = "", y = "Value") +
+  theme_minimal()
+```
+
 - **Scatter plots**: Reveal relationships between two numerical variables
+
+```{r scatter_plot_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+ggplot(numerical_data, aes(x = value1, y = value2)) +
+  geom_point(color = "darkblue", alpha = 0.6) +
+  labs(title = "Scatter Plot", x = "Value 1", y = "Value 2") +
+  theme_minimal()
+```
+
 - **Line graphs**: Track changes over ordered sequences
+
+```{r line_graph_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+time_data <- data.frame(
+  time = 1:20,
+  value = cumsum(rnorm(20, mean = 2, sd = 5))
+)
+ggplot(time_data, aes(x = time, y = value)) +
+  geom_line(color = "darkred", linewidth = 1) +
+  labs(title = "Line Graph", x = "Time", y = "Value") +
+  theme_minimal()
+```
+
 - **Heatmaps**: Display correlation matrices or intensity patterns
+
+```{r heatmap_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+library(reshape2)
+cor_matrix <- cor(numerical_data)
+cor_melted <- melt(cor_matrix)
+ggplot(cor_melted, aes(x = Var1, y = Var2, fill = value)) +
+  geom_tile() +
+  scale_fill_gradient2(low = "blue", mid = "white", high = "red", midpoint = 0) +
+  labs(title = "Heatmap (Correlation Matrix)", x = "", y = "") +
+  theme_minimal()
+```
 
 **Exploratory techniques:**
 
@@ -613,14 +764,96 @@ Effective data visualization transforms raw data into visual representations tha
 
 **Time series data** represents sequential observations measured at successive time points. Visualization and exploration focus on temporal patterns, trends, seasonality, and cyclical behaviors.
 
+```{r time_series_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Creating a sample time series dataset
+set.seed(42)
+time_series_data <- tibble(
+  date = seq.Date(from = as.Date("2023-01-01"), by = "month", length.out = 24),
+  value = cumsum(rnorm(24, mean = 5, sd = 10))
+)
+
+# Displaying the time series data
+print(time_series_data)
+```
+
 **Common visualizations:**
 
 - **Line charts**: Display trends and patterns over time
+
+```{r line_chart_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+ggplot(time_series_data, aes(x = date, y = value)) +
+  geom_line(color = "darkblue", linewidth = 1) +
+  labs(title = "Line Chart", x = "Date", y = "Value") +
+  theme_minimal()
+```
+
 - **Area charts**: Show cumulative values or multiple series stacked
+
+```{r area_chart_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+ggplot(time_series_data, aes(x = date, y = value)) +
+  geom_area(fill = "steelblue", alpha = 0.6) +
+  labs(title = "Area Chart", x = "Date", y = "Value") +
+  theme_minimal()
+```
+
 - **Candlestick charts**: Represent open, high, low, close values (financial data)
+
+```{r candlestick_chart_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+financial_data <- data.frame(
+  date = seq.Date(from = as.Date("2024-01-01"), by = "day", length.out = 10),
+  open = c(100, 102, 105, 103, 107, 110, 108, 112, 115, 113),
+  high = c(103, 106, 107, 108, 111, 113, 112, 116, 118, 117),
+  low = c(99, 101, 103, 102, 106, 109, 107, 111, 114, 112),
+  close = c(102, 105, 103, 107, 110, 108, 112, 115, 113, 116)
+)
+ggplot(financial_data, aes(x = date)) +
+  geom_segment(aes(xend = date, y = low, yend = high)) +
+  geom_segment(aes(xend = date, y = open, yend = close), linewidth = 3, 
+               color = ifelse(financial_data$close > financial_data$open, "green", "red")) +
+  labs(title = "Candlestick Chart", x = "Date", y = "Price") +
+  theme_minimal()
+```
+
 - **Seasonal plots**: Reveal recurring patterns by season or period
+
+```{r seasonal_plot_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+library(lubridate)
+seasonal_data <- time_series_data %>%
+  mutate(month = month(date, label = TRUE),
+         year = year(date))
+ggplot(seasonal_data, aes(x = month, y = value, group = year, color = as.factor(year))) +
+  geom_line(linewidth = 1) +
+  labs(title = "Seasonal Plot", x = "Month", y = "Value", color = "Year") +
+  theme_minimal()
+```
+
 - **Autocorrelation plots**: Identify temporal dependencies
+
+```{r autocorrelation_plot_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+acf(time_series_data$value, main = "Autocorrelation Plot")
+```
+
 - **Control charts**: Monitor process stability and detect anomalies
+
+```{r control_chart_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+library(ggplot2)
+control_data <- time_series_data %>%
+  mutate(mean_value = mean(value),
+         ucl = mean(value) + 3 * sd(value),
+         lcl = mean(value) - 3 * sd(value))
+ggplot(control_data, aes(x = date, y = value)) +
+  geom_line(color = "darkblue") +
+  geom_point(color = "darkblue") +
+  geom_hline(aes(yintercept = mean_value), color = "green", linetype = "dashed") +
+  geom_hline(aes(yintercept = ucl), color = "red", linetype = "dashed") +
+  geom_hline(aes(yintercept = lcl), color = "red", linetype = "dashed") +
+  labs(title = "Control Chart", x = "Date", y = "Value") +
+  theme_minimal()
+```
 
 **Exploratory techniques:**
 
