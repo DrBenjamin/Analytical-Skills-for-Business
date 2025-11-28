@@ -569,7 +569,7 @@ Effective data visualization transforms raw data into visual representations tha
 
 **Categorical data** represents discrete groups or categories without inherent numerical ordering (nominal) or with meaningful ordering (ordinal). Visualization and exploration focus on frequency distributions and group comparisons.
 
-```{r graphical_methods, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=8}
+```{r categorical_data_example, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=8}
 # Loading necessary libraries
 library(tidyverse)
 
