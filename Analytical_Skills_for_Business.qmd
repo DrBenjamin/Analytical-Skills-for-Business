@@ -219,7 +219,7 @@ Understanding version control systems is fundamental for modern business analyti
           7.  Add a new node Github - configure the node to commit the results to the [Github repository](https://github.com/DrBenjamin/Mediapipe)
 
       - In late 2025 there was a free [n8n certification
-        course](https://docs.n8n.io/courses/level-one/) added to the n8n documentation.
+        course](https://docs.n8n.io/courses/level-one/) added to the n8n documentation. The students can achieve a certificate of completion for this course as part of this class (see an example [Certificate of Completion](./topics/Certificate_of_Completion_n8n.pdf)).
 
 - [**Streamlit on Snowflake**](https://www.snowflake.com/)
 
