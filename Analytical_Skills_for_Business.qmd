@@ -307,6 +307,11 @@ sample_data <- tibble(
   values = c(1, 2, 2, 3, 4, 5, 100)  # Example data with an outlier
 )
 
+# Opening the help pages for `mean` function
+?mean
+??mean
+help(mean)
+
 # Calculating central tendency measures
 central_tendency <- sample_data %>%
   summarise(
@@ -1061,6 +1066,9 @@ Association analysis examines how variables relate to each other, quantifying th
 # Loading necessary libraries
 library(ourdata)
 library(dplyr)
+
+# Getting the current working directory
+getwd()
 
 # Creating data frames from the ourdata package datasets
 hdi_df <- hdi
