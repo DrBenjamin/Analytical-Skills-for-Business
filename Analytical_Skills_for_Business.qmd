@@ -971,7 +971,34 @@ Real-world data is rarely clean or analysis-ready. Data quality issues compromis
 - Create data dictionaries
 - Document assumptions and limitations
 
-### Tools and Techniques in R
+### Tools and Techniques in 
+
+R is an functional programming language used by many data analysts for their daily statistical work. It has a rich ecosystem of packages specifically designed for data cleaning tasks. But it is also usable as a calculation engine, see this example for a simple mathematical operation like:
+
+$$ \sqrt{81} - 2^2 \cdot \frac{1}{4}$$
+
+```{r calculation, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Example calculation
+result <- sqrt(81)-2^{2}*1/4
+
+# Printing the result
+print(result)
+```
+
+and it is simple to assign data to variables, like in this example:
+
+```{r data_assigning, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library("tidyverse")
+
+# Creating a simple data frame
+state <- c("NRW", "HH", "HB")
+cases <- c(628, 98, 50)
+df_covid <- tibble(state, cases)
+
+# Displaying the data frame
+print(df_covid)
+```
 
 **R packages for data cleaning:**
 
