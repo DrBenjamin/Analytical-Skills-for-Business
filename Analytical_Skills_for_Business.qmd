@@ -298,6 +298,60 @@ Central tendency measures identify the typical or central value in a dataset.
 - The **median** (middle value when sorted) is robust to outliers and preferred for skewed data. 
 - The **mode** (most frequent value) is useful for categorical data and can identify the most common category or value. In business analytics, choosing the appropriate measure depends on data distribution and the presence of outliers.
 
+First we set up the R environment and working directory:
+
+```{r r_setup, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Setting up R environment
+getwd()
+
+# Setting working directory (example for MacOS)
+setwd("/Users/<username>/Documents/Analytical-Skills-for-Business")
+```
+
+R is an functional programming language used by many data analysts for their daily statistical work. It has a rich ecosystem of packages specifically designed for data cleaning tasks. But it is also usable as a calculation engine, see this example for a simple mathematical operation like:
+
+$$ \sqrt{81} - 2^2 \cdot \frac{1}{4}$$
+
+```{r calculation, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Opening help pages for functions can be done in multiple ways, for example:
+# Using the ? operator
+?<function_name>
+# or  using the `help` function
+help(<function_name>)
+# and sometimes the help search function
+??<search_term>
+
+# Reading the help pages for `sqrt` function
+?sqrt
+
+# Calculation the example
+result <- sqrt(81)-2^{2}*1/4
+
+# Printing the result
+print(result)
+```
+
+and it is simple to assign data to variables, like in this example:
+
+```{r data_assigning, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+# Loading necessary libraries
+library("tidyverse")
+
+# Reading the help pages for `tibble` function
+# (choose the right information in the RStudio Help tab / panel)
+??tibble
+
+# Creating a simple data frame
+state <- c("NRW", "HH", "HB")
+cases <- c(628, 98, 50)
+df_covid <- tibble(state, cases)
+
+# Displaying the data frame
+print(df_covid)
+```
+
+After these R foundation basics we can calculate the central tendency measures:
+
 ```{r central_tendency, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Loading necessary libraries
 library(tidyverse)
@@ -307,9 +361,7 @@ sample_data <- tibble(
   values = c(1, 2, 2, 3, 4, 5, 100)  # Example data with an outlier
 )
 
-# Opening the help pages for `mean` function
-?mean
-??mean
+# Reading the help pages for `mean` function
 help(mean)
 
 # Calculating central tendency measures
@@ -976,36 +1028,9 @@ Real-world data is rarely clean or analysis-ready. Data quality issues compromis
 - Create data dictionaries
 - Document assumptions and limitations
 
-### Tools and Techniques in 
+### Tools and Techniques in R
 
-R is an functional programming language used by many data analysts for their daily statistical work. It has a rich ecosystem of packages specifically designed for data cleaning tasks. But it is also usable as a calculation engine, see this example for a simple mathematical operation like:
-
-$$ \sqrt{81} - 2^2 \cdot \frac{1}{4}$$
-
-```{r calculation, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-# Example calculation
-result <- sqrt(81)-2^{2}*1/4
-
-# Printing the result
-print(result)
-```
-
-and it is simple to assign data to variables, like in this example:
-
-```{r data_assigning, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-# Loading necessary libraries
-library("tidyverse")
-
-# Creating a simple data frame
-state <- c("NRW", "HH", "HB")
-cases <- c(628, 98, 50)
-df_covid <- tibble(state, cases)
-
-# Displaying the data frame
-print(df_covid)
-```
-
-**R packages for data cleaning:**
+The are several R packages and functions designed to facilitate data cleaning tasks:
 
 - `tidyverse` (dplyr, tidyr): Data manipulation and reshaping
 - `janitor`: Data cleaning utilities and tabulation
