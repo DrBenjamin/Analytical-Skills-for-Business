@@ -298,11 +298,12 @@ Central tendency measures identify the typical or central value in a dataset.
 - The **median** (middle value when sorted) is robust to outliers and preferred for skewed data. 
 - The **mode** (most frequent value) is useful for categorical data and can identify the most common category or value. In business analytics, choosing the appropriate measure depends on data distribution and the presence of outliers.
 
-To set up the working directory use `getwd()` and `setwd()` functions. For help,
+To set up the working directory use `getwd()` to show the current and `setwd()`
+to set a new working directory. For help,
 use the commands `?`, `??` and `help` to read the help pages:
 
 ```{r r_setup, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
-# Getting  up R environment
+# Getting the current working directory
 getwd()
 
 # Setting working directory (example for MacOS)
