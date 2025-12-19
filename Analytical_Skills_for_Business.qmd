@@ -300,8 +300,8 @@ Central tendency measures identify the typical or central value in a dataset.
 
 First we set up the R environment and working directory:
 
-```{r r_setup, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-# Setting up R environment
+```{r r_setup, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
+# Getting  up R environment
 getwd()
 
 # Setting working directory (example for MacOS)
@@ -312,7 +312,7 @@ R is an functional programming language used by many data analysts for their dai
 
 $$ \sqrt{81} - 2^2 \cdot \frac{1}{4}$$
 
-```{r calculation, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
+```{r r_calculation, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
 # Opening help pages for functions can be done in multiple ways, for example:
 # Using the ? operator
 ?<function_name>
