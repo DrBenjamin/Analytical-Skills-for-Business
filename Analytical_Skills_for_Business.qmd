@@ -298,7 +298,8 @@ Central tendency measures identify the typical or central value in a dataset.
 - The **median** (middle value when sorted) is robust to outliers and preferred for skewed data. 
 - The **mode** (most frequent value) is useful for categorical data and can identify the most common category or value. In business analytics, choosing the appropriate measure depends on data distribution and the presence of outliers.
 
-First we set up the R environment and working directory:
+To set up the working directory use `getwd()` and `setwd()` functions. For help,
+use the commands `?`, `??` and `help` to read the help pages:
 
 ```{r r_setup, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE, eval=FALSE}
 # Getting  up R environment
@@ -306,6 +307,14 @@ getwd()
 
 # Setting working directory (example for MacOS)
 setwd("/Users/<username>/Documents/Analytical-Skills-for-Business")
+
+# Opening help pages for functions can be done in multiple ways, for example:
+# Using the `?` operator
+?<function_name>
+# or  using the `help` function
+help(<function_name>)
+# and sometimes you need to use the `??` operator to search for documentation
+??<search_term>
 ```
 
 R is an functional programming language used by many data analysts for their daily statistical work. It has a rich ecosystem of packages specifically designed for data cleaning tasks. But it is also usable as a calculation engine, see this example for a simple mathematical operation like:
@@ -313,14 +322,6 @@ R is an functional programming language used by many data analysts for their dai
 $$ \sqrt{81} - 2^2 \cdot \frac{1}{4}$$
 
 ```{r r_calculation, echo=TRUE, message=FALSE, warning=FALSE, error=FALSE}
-# Opening help pages for functions can be done in multiple ways, for example:
-# Using the ? operator
-?<function_name>
-# or  using the `help` function
-help(<function_name>)
-# and sometimes the help search function
-??<search_term>
-
 # Reading the help pages for `sqrt` function
 ?sqrt
 
